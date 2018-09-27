@@ -9,20 +9,20 @@ const sourceReducer = ( state = initialState.savedSourceList, action) => {
       newSearchByIdEntry = {
         isFetching: true,
         sources: [],
-        localSearchId: action.localSearchId
+        localSourceSearchId: action.localSourceSearchId
       }
       newSearchByIdStateSlice = Object.assign({}, state, {
-        [action.localSearchId]: newSearchByIdEntry
+        [action.localSourceSearchId]: newSearchByIdEntry
       });
       return newSearchByIdStateSlice;
     case types.RECEIVE_SOURCES:
-      newSearchByIdEntry = Object.assign({}, state[action.localSearchId], {
+      newSearchByIdEntry = Object.assign({}, state[action.localSourceSearchId], {
         isFetching: false,
         sources: action.sources,
-        localSearchId: action.localSearchId
+        localSourceSearchId: action.localSourceSearchId
       });
       newSearchByIdStateSlice = Object.assign({}, state, {
-        [action.localSearchId]: newSearchByIdEntry
+        [action.localSourceSearchId]: newSearchByIdEntry
       });
       return newSearchByIdStateSlice;
     default:

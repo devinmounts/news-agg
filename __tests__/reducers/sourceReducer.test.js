@@ -7,7 +7,7 @@ const testState = {
   1: {
     isFetching: true,
     sources: [],
-    localSearchId: 1
+    localSourceSearchId: 1
   }
 }
 
@@ -25,9 +25,9 @@ describe('News App', () => {
       const newStateEntry = {
         isFetching: true,
         sources: [],
-        localSearchId: action.localSearchId
+        localSourceSearchId: action.localSourceSearchId
       };
-      expect(sourceReducer(initialState.savedSourceList, action)[action.localSearchId]).toEqual(newStateEntry);
+      expect(sourceReducer(initialState.savedSourceList, action)[action.localSourceSearchId]).toEqual(newStateEntry);
     })
 
     it('Should update state on receive sources', () => {
@@ -35,9 +35,9 @@ describe('News App', () => {
       const newObject = {
         isFetching: false,
         sources: [],
-        localSearchId: action.localSearchId
+        localSourceSearchId: action.localSourceSearchId
       };
-      expect(sourceReducer(testState, action)[action.localSearchId]).toEqual(newObject);
+      expect(sourceReducer(testState, action)[action.localSourceSearchId]).toEqual(newObject);
     })
   })
 });

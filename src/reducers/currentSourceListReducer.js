@@ -4,7 +4,7 @@ const { types, initialState} = constants;
 const currentSourceListReducer = (state = initialState.currentSourceListId, action) =>{
   switch(action.type){
     case types.UPDATE_SOURCE_LIST_ID:
-    return action.localSearchId;
+    return action.localSourceSearchId;
   default:
     return state;
   }
