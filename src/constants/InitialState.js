@@ -1,5 +1,5 @@
 export const initialState = {
-  currentSourceSearchId: 0,
+  currentSourceListId: 0,
   savedSourceList: {
     0: {}
   },

@@ -1,11 +1,11 @@
 import React from 'react';
 import sourceReducer from './sourceReducer';
-import currentSourceSearchReducer from './currentSourceSearchReducer';
+import currentSourceListReducer from './currentSourceListReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-    currentSourceSearchId: currentSourceSearchReducer,
+    currentSourceListId: currentSourceListReducer,
     savedSourceList: sourceReducer
   });
 
-export default rootReducer
+export default rootReducer;
