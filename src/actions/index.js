@@ -10,7 +10,8 @@ export function fetchSources(){
       error => console.log('An error occured', error)
     ).then(function(json) {
       console.log(json.sources);
-      dispatch(receiveSources(json.sources, localSourceSearchId))
+      dispatch(receiveSources(json.sources, localSourceSearchId));
+      dispatch(updateCurrentSourceListId(localSourceSearchId));
     });
   };
 }

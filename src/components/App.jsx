@@ -18,7 +18,23 @@ function App(){
 const mapStateToProps = state => {
   console.log("Map to props", state)
   let info;
-  // const sourcesObject = state.savedSourceList[state.currentSearchId];
-
+  const sourcesObject = state.savedSourceList[state.currentSourceListId];
+  console.log(sourcesObject);
+  if(!state.savedSourceList[state.currentSourceListId].isFetching){
+    info = {
+      id: state.currentSourceListId,
+      sources: sourcesObject.sources
+    };
+  }
+  else {
+    info = {
+      sources: ''
+    };
+  }
+  return {
+    sourcesObject: info
+  };
+  console.log(info)
 }
+
 export default connect(mapStateToProps)(App);
