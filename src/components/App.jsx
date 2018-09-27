@@ -19,4 +19,4 @@ const mapStateToProps = state => {
   console.log("Map to props", state)
 
 }
-export default connnect(mapStateToProps)(App);
+export default connect(mapStateToProps)(App);

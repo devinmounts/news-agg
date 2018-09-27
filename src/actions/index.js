@@ -9,7 +9,8 @@ export function fetchSources(){
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {
-      console.log(json);
+      console.log(json.sources);
+      dispatch(receiveSources(json.sources, localSearchId))
     });
   };
 }
