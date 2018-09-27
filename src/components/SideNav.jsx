@@ -1,5 +1,6 @@
 import React from 'react';
 import FormField from './FormField';
+import SourcesDisplay from './SourcesDisplay';
 
 function SideNav(){
   let divStyle = {
@@ -16,6 +17,7 @@ function SideNav(){
   return(
     <div style={divStyle}>
       <FormField />
+      <SourcesDisplay />
     </div>
   );
 

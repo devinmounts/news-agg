@@ -1,14 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAddressRate } from './../actions';
+import { fetchSources } from './../actions';
 import PropTypes from 'prop-types';
 
 function FormField({ dispatch }) {
-  let address;
-  let rate;
+
+ function render(){
+   dispatch(fetchSources())
+ }
   return(
     <div>
       <h3>Enter Search Category</h3>
+      <form onSubmit={e => {
+          e.preventDefault();
+          dispatch(fetchSources())
+        }}>
+        <button type='submit'>Search</button>
+      </form>
 
     </div>
   );
