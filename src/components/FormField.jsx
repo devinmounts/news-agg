@@ -5,9 +5,6 @@ import PropTypes from 'prop-types';
 
 function FormField({ dispatch }) {
 
- function render(){
-   dispatch(fetchSources())
- }
   return(
     <div>
       <h3>Enter Search Category</h3>

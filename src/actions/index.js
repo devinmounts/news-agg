@@ -5,11 +5,10 @@ export function fetchSources(){
   return function (dispatch) {
     const localSourceSearchId = v4();
     dispatch(requestSources());
-    return fetch('https://newsapi.org/v2/sources?apiKey=72b782e18f474153aa0e481445dec308').then(
+    return fetch('https://newsapi.org/v2/sources?apiKey=93ddfdc17b9d4504abef19dc84092198').then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {
-      console.log(json.sources);
       dispatch(receiveSources(json.sources, localSourceSearchId));
       dispatch(updateCurrentSourceListId(localSourceSearchId));
     });

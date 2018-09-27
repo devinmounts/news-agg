@@ -1,8 +1,11 @@
 import React from 'react';
 import FormField from './FormField';
-import SourcesDisplay from './SourcesDisplay';
+import SourcesContainer from './SourcesContainer';
+import PropTypes from 'prop-types';
 
-function SideNav(){
+function SideNav(props){
+  const { sourcesObject } = props
+
   let divStyle = {
     width: '12%',
     height: 'calc(110vh - 50px)',
@@ -17,9 +20,12 @@ function SideNav(){
   return(
     <div style={divStyle}>
       <FormField />
-      <SourcesDisplay />
+      <SourcesContainer sourcesObject={sourcesObject} />
     </div>
   );
+}
 
+SideNav.propTypes = {
+  sourcesObject: PropTypes.object
 }
 export default SideNav;

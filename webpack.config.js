@@ -64,7 +64,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'Redux Karaoke',
+      title: 'News Agg',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]
