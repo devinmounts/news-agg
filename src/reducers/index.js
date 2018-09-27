@@ -1,11 +1,11 @@
 // import React from 'react';
-// import addressReducer from './addressReducer';
-// import currentAddressReducer from './currentAddressReducer';
+// import sourceReducer from './sourceReducer';
+// import currentSearchReducer from './currentSearchReducer';
 // import { combineReducers } from 'redux';
 //
 // const rootReducer = combineReducers({
-//     currentAddressId: currentAddressReducer,
-//     objectList: addressReducer
+//     currentSearchId: currentSearchReducer,
+//     savedSourceList: sourceReducer
 //   });
 //
 // export default rootReducer
