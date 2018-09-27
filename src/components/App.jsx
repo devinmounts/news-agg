@@ -17,6 +17,8 @@ function App(){
 
 const mapStateToProps = state => {
   console.log("Map to props", state)
+  let info;
+  // const sourcesObject = state.savedSourceList[state.currentSearchId];
 
 }
 export default connect(mapStateToProps)(App);
