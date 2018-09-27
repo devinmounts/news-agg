@@ -1,6 +1,9 @@
 export const initialState = {
   currentSearchId: 0,
-  savedSearchList: {
+  savedSourceList: {
+    0: {}
+  },
+  savedArticleList: {
     0: {}
   }
 }

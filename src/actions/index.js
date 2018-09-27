@@ -2,7 +2,7 @@ import * as types from './../constants/ActionTypes';
 import v4 from 'uuid';
 
 export function fetchSources(){
-  return (dispatch) {
+  return function (dispatch) {
     const localSearchId = v4();
     dispatch(requestSources())
     return fetch('https://newsapi.org/v2/sources?apiKey=72b782e18f474153aa0e481445dec308').then(

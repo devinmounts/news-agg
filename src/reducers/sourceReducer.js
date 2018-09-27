@@ -1,11 +1,11 @@
 import constants from './../constants';
 const { initialState, types } = constants;
 
-const sourceReducer = (state = initialState.savedSearchList, action) => {
+const sourceReducer = (state = initialState.savedSourceList, action) => {
   let newSearchByIdEntry;
   let newSearchByIdStateSlice;
   switch(action.type) {
-    case REQUEST_SOURCES:
+    case types.REQUEST_SOURCES:
       newSearchByIdEntry = {
         isFetching: true,
         localSearchId: action.localSearchId
@@ -14,5 +14,9 @@ const sourceReducer = (state = initialState.savedSearchList, action) => {
         [action.localSearchId]: newSearchByIdEntry
       });
       return newSearchByIdStateSlice;
+    default:
+      return state;
   }
 }
+
+export default sourceReducer;
