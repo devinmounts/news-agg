@@ -11,6 +11,15 @@ describe('News App', () => {
   describe('sourceReducer', () => {
     it('Should accept and return initialState', () => {
       expect(sourceReducer(initialState.savedSourceList, { type: null } )).toEqual(initialState.savedSourceList);
+    });
+
+    it('Should update state when API data is requested', () => {
+      const action = actions.requestSources();
+      const newStateEntry = {
+        isFetching: true,
+        localSearchId: action.localSearchId
+      };
+      expect(sourceReducer(initialState.savedSourceList, action)[action.localSearchId]).toEqual(newStateEntry);
     })
   })
 });
