@@ -3,6 +3,7 @@ import FormField from './FormField';
 import DisplayList from './DisplayList';
 import SideNav from './SideNav';
 import TopNav from './TopNav';
+import { connect } from 'react-redux';
 
 function App(){
   return (
@@ -14,4 +15,8 @@ function App(){
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log("Map to props", state)
+
+}
+export default connnect(mapStateToProps)(App);
