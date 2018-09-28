@@ -5,7 +5,7 @@ function Source(props) {
   const { name, url } = props;
   return(
     <div>
-      <span key={url}>{name}</span>
+      <span url={url}>{name}</span>
     </div>
   );
 }

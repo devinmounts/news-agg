@@ -1,7 +1,7 @@
 import constants from './../constants';
 const { initialState, types } = constants;
 
-const sourceReducer = ( state = initialState.savedSourceList, action) => {
+const sourceListReducer = ( state = initialState.savedSourceList, action) => {
   let newSearchByIdEntry;
   let newSearchByIdStateSlice;
   switch(action.type) {
@@ -30,4 +30,4 @@ const sourceReducer = ( state = initialState.savedSourceList, action) => {
   }
 }
 
-export default sourceReducer;
+export default sourceListReducer;

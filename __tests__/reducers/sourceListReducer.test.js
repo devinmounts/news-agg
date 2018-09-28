@@ -1,5 +1,5 @@
 import constants from "./../../src/constants";
-import sourceReducer from './../../src/reducers/sourceReducer';
+import sourceListReducer from './../../src/reducers/sourceListReducer';
 import { createStore } from 'redux';
 import * as actions from './../../src/actions';
 
@@ -13,11 +13,11 @@ const testState = {
 
 describe('News App', () => {
   const { initialState, types } = constants;
-  const store = createStore(sourceReducer, initialState);
+  const store = createStore(sourceListReducer, initialState);
 
-  describe('sourceReducer', () => {
+  describe('sourceListReducer', () => {
     it('Should accept and return initialState', () => {
-      expect(sourceReducer(initialState.savedSourceList, { type: null } )).toEqual(initialState.savedSourceList);
+      expect(sourceListReducer(initialState.savedSourceList, { type: null } )).toEqual(initialState.savedSourceList);
     });
 
     it('Should update state when API data is requested', () => {
@@ -27,7 +27,7 @@ describe('News App', () => {
         sources: [],
         localSourceSearchId: action.localSourceSearchId
       };
-      expect(sourceReducer(initialState.savedSourceList, action)[action.localSourceSearchId]).toEqual(newStateEntry);
+      expect(sourceListReducer(initialState.savedSourceList, action)[action.localSourceSearchId]).toEqual(newStateEntry);
     })
 
     it('Should update state on receive sources', () => {
@@ -37,7 +37,7 @@ describe('News App', () => {
         sources: [],
         localSourceSearchId: action.localSourceSearchId
       };
-      expect(sourceReducer(testState, action)[action.localSourceSearchId]).toEqual(newObject);
+      expect(sourceListReducer(testState, action)[action.localSourceSearchId]).toEqual(newObject);
     })
   })
 });

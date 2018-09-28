@@ -2,7 +2,7 @@ import React from 'react';
 
 function TopNav(){
   let divStyle = {
-    width: '87%',
+    width: '72%',
     height: '200px',
     border: 'solid black .5px',
     float: 'right',

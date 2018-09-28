@@ -1,5 +1,5 @@
 import constants from "./../../src/constants";
-import sourceReducer from './../../src/reducers/sourceReducer';
+import sourceListReducer from './../../src/reducers/sourceListReducer';
 import currentSourceListReducer from './../../src/reducers/currentSourceListReducer';
 import rootReducer from './../../src/reducers'
 import { createStore } from 'redux';
@@ -15,7 +15,7 @@ describe('News App', () => {
     });
 
     it('Should contian logic from both reducers', () => {
-      expect(store.getState().savedSourceList).toEqual(sourceReducer(initialState.savedSourceList, { type: null }));
+      expect(store.getState().savedSourceList).toEqual(sourceListReducer(initialState.savedSourceList, { type: null }));
       expect(store.getState().currentSourceListId).toEqual(currentSourceListReducer(initialState.currentSourceListId, { type: null }));
     });
   });
