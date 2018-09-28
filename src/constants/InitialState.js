@@ -1,6 +1,6 @@
 export const initialState = {
   currentSourceListId: 0,
-  currentArticleListId: null,
+  currentArticleListId: 0,
   currentSourceUrl: null,
   savedSourceList: {
     0: {}

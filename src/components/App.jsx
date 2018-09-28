@@ -1,6 +1,6 @@
 import React from 'react';
 import FormField from './FormField';
-import DisplayList from './DisplayList';
+import DisplayContainer from './DisplayContainer';
 import SideNav from './SideNav';
 import TopNav from './TopNav';
 import { connect } from 'react-redux';
@@ -21,36 +21,45 @@ class App extends React.Component {
       <div>
         <SideNav sourcesObject={this.props.sourcesObject} />
         <TopNav />
-        <DisplayList />
+        <DisplayContainer articlesObject={this.props.articlesObject}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  let info;
+  let sourceInfo;
   let articleInfo;
 
   const sourcesObject = state.savedSourceList[state.currentSourceListId];
-  // const articlesObject = state.savedArticleList[state.]
-  if(!state.savedSourceList[state.currentSourceListId].isFetching){
-    info = {
+  const articlesObject = state.savedArticleList[state.currentArticleListId];
+  if(!state.savedSourceList[state.currentSourceListId].isFetching && !state.savedArticleList[state.currentArticleListId].isFetching){
+    sourceInfo = {
       id: state.currentSourceListId,
       sources: sourcesObject.sources
+    },
+    articleInfo = {
+      id: state.currentArticleListId,
+      articles: articlesObject.articles
     };
   }
   else {
-    info = {
+    sourceInfo = {
       sources: ''
-    };
+    },
+    articleInfo = {
+      articles: ''
+    }
   }
   return {
-    sourcesObject: info
+    sourcesObject: sourceInfo,
+    articlesObject: articleInfo
   };
 };
 
 App.propTypes = {
-  sourcesObject: PropTypes.object
+  sourcesObject: PropTypes.object,
+  articlesObject: PropTypes.object
 };
 
 export default connect(mapStateToProps)(App);
