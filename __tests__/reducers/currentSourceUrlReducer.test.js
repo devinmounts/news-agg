@@ -7,7 +7,7 @@ describe('News App', () => {
   const { initialState, types } = constants;
   const store = createStore(currentSourceUrlReducer, initialState);
 
-  describe('currentSourceListReducer', () => {
+  describe('currentSourceUrlReducer', () => {
     it('Should accept and return initialState', () => {
       expect(currentSourceUrlReducer(initialState, { type: null } )).toEqual(initialState);
     });

@@ -1,12 +1,12 @@
 import React from 'react';
 import sourceListReducer from './sourceListReducer';
 import topHeadlinesListReducer from './topHeadlinesListReducer';
-import currentSourceListReducer from './currentSourceListReducer';
+import currentSourceListIdReducer from './currentSourceListIdReducer';
 import currentSourceUrlReducer from './currentSourceUrlReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  currentSourceListId: currentSourceListReducer,
+  currentSourceListId: currentSourceListIdReducer,
   currentSourceUrl: currentSourceUrlReducer,
   savedSourceList: sourceListReducer,
   savedArticleList: topHeadlinesListReducer

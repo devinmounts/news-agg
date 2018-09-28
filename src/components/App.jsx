@@ -14,7 +14,7 @@ class App extends React.Component {
     const { sourcesObject, dispatch } = props;
   }
 
- 
+
 
   render(){
     return (
@@ -29,8 +29,10 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   let info;
+  let articleInfo;
 
   const sourcesObject = state.savedSourceList[state.currentSourceListId];
+  // const articlesObject = state.savedArticleList[state.]
   if(!state.savedSourceList[state.currentSourceListId].isFetching){
     info = {
       id: state.currentSourceListId,
