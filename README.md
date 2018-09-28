@@ -1,4 +1,4 @@
-# Meeting Manager
+# News Aggregator
 
 #### Epicodus Capstone, 09/21/2018
 
