@@ -2,20 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Source from './Source';
 
-function SourcesContainer(props) {
-  const { sourcesObject } = props
-  console.log(sourcesObject)
-    return(
-      <div>
-        {props.sources}
-        <Source />
-      </div>
-
-    );
+class SourcesContainer extends React.Component {
+  constructor(props){
+    super(props);
+    const { sourcesObject } = props
   }
 
-SourcesContainer.propTypes = {
-  sourcesObject: PropTypes.object
+  sourceComponent() {
+    Object.keys(this.props.sourcesObject.sources).map((sourceId) => {
+      let source = this.props.sourcesObject.sources[sourceId]
+      return console.log(source);
+    });
+  }
+  // {sourcesObject.sources != undefined }
+  // {Object.keys(sourcesObject.sources).map(function(id)
+  //   {
+  //     let source = sourceObject.sources[id];
+  //   return <Source
+  //             name = {source.name}
+  //             key = {source.url}   />;
+  //   })}
+
+  render(){
+    console.log(this.props);
+    if(this.props.sourcesObject.sources != undefined){
+      console.log('render');
+      this.sourceComponent()
+    }
+
+    return(
+      <div>
+
+      </div>
+    );
+  }
 }
 
 export default SourcesContainer;
