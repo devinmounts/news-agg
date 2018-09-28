@@ -2,24 +2,14 @@ import React from 'react';
 import FormField from './FormField';
 import SourcesContainer from './SourcesContainer';
 import PropTypes from 'prop-types';
+import './styles/SideNav.css';
 
 function SideNav(props){
   const { sourcesObject } = props;
 
-  let divStyle = {
-    minWidth: '15%',
-    height: 'calc(110vh - 50px)',
-    border: 'solid black .5px',
-    float: 'left',
-    display: 'inline-block',
-    position: 'relative',
-    overflow: 'hidden',
-    backgroundColor: 'aqua',
-    overflow: 'scroll'
 
-  };
   return(
-    <div style={divStyle}>
+    <div className='sideNavStyle'>
       <FormField />
       <SourcesContainer sourcesObject={sourcesObject} />
     </div>

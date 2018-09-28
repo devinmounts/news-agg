@@ -1,15 +1,10 @@
 import React from 'react';
+import './styles/TopNav.css';
 
 function TopNav(){
-  let divStyle = {
-    width: '72%',
-    height: '200px',
-    border: 'solid black .5px',
-    float: 'right',
-    backgroundColor: 'aqua'
-  };
+
   return(
-    <div style={divStyle}>
+    <div className='topNavStyle'>
     TopNav Works
     </div>
   );

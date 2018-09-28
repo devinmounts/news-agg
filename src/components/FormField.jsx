@@ -7,7 +7,6 @@ function FormField({ dispatch }) {
 
   return(
     <div>
-      <h3>Enter Search Category</h3>
       <form onSubmit={e => {
         e.preventDefault();
         dispatch(fetchSources())
