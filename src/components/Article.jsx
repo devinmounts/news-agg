@@ -8,8 +8,8 @@ function Article(props) {
   const { title, author, source, description, url, image, dispatch } = props;
 
   return(
-    <div>
-      <img src={image} />
+    <div className='article-container'>
+      <img className='image' src={image} />
       <h1>{title}</h1>
       <h5>{author}</h5>
       <p>{description}</p>

@@ -1,8 +1,7 @@
 .display-container {
-  margin: 10px;
-  padding: 5px;
-  border: solid black .5px;
-  width: 73%;
+  width: 72%;
   float: right;
+  padding-right: 40px;
   height: 100%;
+
 }
