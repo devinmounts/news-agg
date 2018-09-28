@@ -6,6 +6,7 @@ import TopNav from './TopNav';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchSources } from './../actions';
+import './styles/App.css';
 
 
 class App extends React.Component {

@@ -21,7 +21,8 @@ function Source(props) {
             color: white;
           }
           div:hover {
-            background-color: #eb803c
+            background-color: #eb803c;
+            cursor: pointer;
           }
       `}</style>
     <span onClick={updateUrl}>{name}</span>
