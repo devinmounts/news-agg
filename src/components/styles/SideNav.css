@@ -1,11 +1,9 @@
 .sideNavStyle {
-  background-color: #153042;
-  max-width: 20%;
+  width: 23%;
   height: calc(110vh - 50px);
-  border: solid black .5px;
   float: left;
   display: inline-block;
   position: relative;
   overflow: hidden;
-  overflow: scroll
+  overflow: scroll;
 }

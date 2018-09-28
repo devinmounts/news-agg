@@ -4,9 +4,10 @@
   padding: 3px;
   border: solid black 1px;
   border-radius: 5px;
-  color: white;
+  color: grey;
 }
 .source:hover {
   background-color: #eb803c;
   cursor: pointer;
+  color: #153042;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateCurrentSourceUrl } from './../actions';
+import './styles/Article.css';
 
 function Article(props) {
   const { title, author, source, description, url, image, dispatch } = props;

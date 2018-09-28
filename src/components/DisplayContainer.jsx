@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Article from './Article';
+import './styles/DisplayContainer.css';
 
 class DisplayContainer extends React.Component {
   constructor(props){
@@ -25,7 +26,8 @@ class DisplayContainer extends React.Component {
       });
     }
     return (
-      <div>
+      <div className='display-container'>
+        Container Works
         {articles !=null ? articles : ''}
       </div>
     );

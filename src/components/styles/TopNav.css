@@ -1,7 +1,9 @@
 .topNavStyle {
-  width: 72%;
+  width: 76%;
   height: 200px;
   border: solid black .5px;
   float: right;
-  background-color: #153042
+  background-color: #153042;
+
+
 };
