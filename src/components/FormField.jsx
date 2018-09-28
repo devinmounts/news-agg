@@ -10,7 +10,8 @@ function FormField({ dispatch }) {
       <h3>Enter Search Category</h3>
       <form onSubmit={e => {
         e.preventDefault();
-        dispatch(fetchSources());
+        dispatch(fetchSources())
+        dispatch(fetchTopHeadlines());
       }}>
         <button type='submit'>Search</button>
       </form>

@@ -8,7 +8,7 @@ const topHeadlinesListReducer = ( state = initialState.savedTopHeadlines, action
   case types.REQUEST_TOPHEADLINES:
     newSearchByIdEntry = {
       isFetching: true,
-      topHeadlines: [],
+      articles: [],
       localHeadLinesSearchId: action.localHeadLinesSearchId
     };
     newSearchByIdStateSlice = Object.assign({}, state, {
@@ -18,7 +18,7 @@ const topHeadlinesListReducer = ( state = initialState.savedTopHeadlines, action
   case types.RECEIVE_TOPHEADLINES:
     newSearchByIdEntry = Object.assign({}, state[action.localHeadLinesSearchId], {
       isFetching: false,
-      topHeadlines: action.articles,
+      articles: action.articles,
       localHeadLinesSearchId: action.localHeadLinesSearchId
     });
     newSearchByIdStateSlice = Object.assign({}, state, {

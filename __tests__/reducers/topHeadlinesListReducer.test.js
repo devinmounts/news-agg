@@ -6,7 +6,7 @@ import * as actions from './../../src/actions';
 const testState = {
   1: {
     isFetching: true,
-    topHeadlines: [],
+    articles: [],
     localHeadLinesSearchId: 1
   }
 }
@@ -24,7 +24,7 @@ describe('News App', () => {
       const action = actions.requestTopHeadlines();
       const newStateEntry = {
         isFetching: true,
-        topHeadlines: [],
+        articles: [],
         localHeadLinesSearchId: action.localHeadLinesSearchId
       };
       expect(topHeadlinesListReducer(initialState.savedArticlesList, action)[action.localHeadLinesSearchId]).toEqual(newStateEntry);
@@ -34,7 +34,7 @@ describe('News App', () => {
       const action = actions.receiveTopHeadlines([],1);
       const newObject = {
         isFetching: false,
-        topHeadlines: [],
+        articles: [],
         localHeadLinesSearchId: action.localHeadLinesSearchId
       };
       expect(topHeadlinesListReducer(testState, action)[action.localHeadLinesSearchId]).toEqual(newObject);
