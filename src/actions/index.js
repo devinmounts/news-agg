@@ -30,3 +30,8 @@ export const updateCurrentSourceListId = (localSourceSearchId) => ({
   type: types.UPDATE_SOURCE_LIST_ID,
   localSourceSearchId
 });
+
+export const updateCurrentSourceUrl = (url) => ({
+  type: types.UPDATE_SOURCE_URL,
+  url
+})

@@ -12,9 +12,18 @@ describe('News App', () => {
       expect(currentSourceUrlReducer(initialState, { type: null } )).toEqual(initialState);
     });
 
-    // it('Should set currentSourceListId to localSourceSearchId', () => {
-    //
-    //   expect(currentSourceUrlReducer(initialState.currentSourceListId, actions.updateCurrentSourceListId(1))).toEqual(1);
-    // })
+    it('Should create and set state slice currentSourceUrl to currentSourceUrl', () => {
+
+      expect(currentSourceUrlReducer(initialState, actions.updateCurrentSourceUrl('http://'))).toEqual({
+        currentSourceListId: 0,
+        currentSourceUrl: 'http://',
+        savedSourceList: {
+          0: {}
+        },
+        savedArticleList: {
+          0: {}
+        }
+      });
+    })
   })
 });
