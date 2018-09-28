@@ -8,9 +8,23 @@ function Source(props) {
   function updateUrl() {
     dispatch(updateCurrentSourceUrl(url));
   }
+
   return(
-    <div>
-      <span onClick={updateUrl}>{name}</span>
+    <div className='source' >
+      <style jsx>{`
+          .source {
+            background-color: #153042;
+            margin: 3px;
+            padding: 3px;
+            border: solid black 1px;
+            border-radius: 5px;
+            color: white;
+          }
+          div:hover {
+            background-color: #eb803c
+          }
+      `}</style>
+    <span onClick={updateUrl}>{name}</span>
     </div>
   );
 }
