@@ -15,10 +15,23 @@ export function fetchSources(){
   };
 }
 
+export function fetchTopHeadlines(){
+  return function (dipatch) {
+    const localHeadLinesSearchId = v4();
+    dispatch(requestTopHeadlines());
+  }
+}
+
 export const requestSources = (localSourceSearchId) => ({
   type: types.REQUEST_SOURCES,
   localSourceSearchId
 });
+
+export const requestTopHeadlines = (localHeadLinesSearchId, url) => ({
+  type: types.REQUEST_TOPHEADLINES,
+  localHeadLinesSearchId,
+  url
+})
 
 export const receiveSources = (sources, localSourceSearchId) => ({
   type: types.RECEIVE_SOURCES,

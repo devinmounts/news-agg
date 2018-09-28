@@ -4,7 +4,7 @@ export const initialState = {
   savedSourceList: {
     0: {}
   },
-  savedArticleList: {
+  savedArticlesList: {
     0: {}
   }
 };
