@@ -11,7 +11,7 @@ import { fetchSources } from './../actions';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    const { sourcesObject, dispatch } = props
+    const { sourcesObject, dispatch } = props;
   }
 
  
@@ -49,6 +49,6 @@ const mapStateToProps = state => {
 
 App.propTypes = {
   sourcesObject: PropTypes.object
-}
+};
 
 export default connect(mapStateToProps)(App);

@@ -34,4 +34,4 @@ export const updateCurrentSourceListId = (localSourceSearchId) => ({
 export const updateCurrentSourceUrl = (url) => ({
   type: types.UPDATE_SOURCE_URL,
   url
-})
+});

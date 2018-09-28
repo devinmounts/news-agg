@@ -4,7 +4,7 @@ import SourcesContainer from './SourcesContainer';
 import PropTypes from 'prop-types';
 
 function SideNav(props){
-  const { sourcesObject } = props
+  const { sourcesObject } = props;
 
   let divStyle = {
     minWidth: '15%',
@@ -17,7 +17,7 @@ function SideNav(props){
     backgroundColor: 'aqua',
     overflow: 'scroll'
 
-  }
+  };
   return(
     <div style={divStyle}>
       <FormField />
@@ -28,5 +28,5 @@ function SideNav(props){
 
 SideNav.propTypes = {
   sourcesObject: PropTypes.object
-}
+};
 export default SideNav;

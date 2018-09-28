@@ -14,16 +14,7 @@ describe('News App', () => {
 
     it('Should create and set state slice currentSourceUrl to currentSourceUrl', () => {
 
-      expect(currentSourceUrlReducer(initialState, actions.updateCurrentSourceUrl('http://'))).toEqual({
-        currentSourceListId: 0,
-        currentSourceUrl: 'http://',
-        savedSourceList: {
-          0: {}
-        },
-        savedArticleList: {
-          0: {}
-        }
-      });
+      expect(currentSourceUrlReducer(initialState, actions.updateCurrentSourceUrl('http://'))).toEqual('http://');
     })
   })
 });

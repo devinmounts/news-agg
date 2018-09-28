@@ -9,9 +9,9 @@ function FormField({ dispatch }) {
     <div>
       <h3>Enter Search Category</h3>
       <form onSubmit={e => {
-          e.preventDefault();
-          dispatch(fetchSources())
-        }}>
+        e.preventDefault();
+        dispatch(fetchSources());
+      }}>
         <button type='submit'>Search</button>
       </form>
 
@@ -21,6 +21,6 @@ function FormField({ dispatch }) {
 
 FormField.propTypes = {
   dispatch: PropTypes.func
-}
+};
 
 export default connect()(FormField);

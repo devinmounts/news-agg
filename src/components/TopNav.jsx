@@ -7,7 +7,7 @@ function TopNav(){
     border: 'solid black .5px',
     float: 'right',
     backgroundColor: 'aqua'
-  }
+  };
   return(
     <div style={divStyle}>
     TopNav Works
