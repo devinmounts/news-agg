@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Source() {
+function Source(props) {
   return(
     <div>
-      Source
+      Source Works
     </div>
   );
 }

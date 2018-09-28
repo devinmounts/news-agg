@@ -8,31 +8,24 @@ class SourcesContainer extends React.Component {
     const { sourcesObject } = props
   }
 
-  sourceComponent() {
-    Object.keys(this.props.sourcesObject.sources).map((sourceId) => {
-      let source = this.props.sourcesObject.sources[sourceId]
-      return console.log(source);
-    });
-  }
-  // {sourcesObject.sources != undefined }
-  // {Object.keys(sourcesObject.sources).map(function(id)
-  //   {
-  //     let source = sourceObject.sources[id];
-  //   return <Source
-  //             name = {source.name}
-  //             key = {source.url}   />;
-  //   })}
+
 
   render(){
-    console.log(this.props);
-    if(this.props.sourcesObject.sources != undefined){
-      console.log('render');
-      this.sourceComponent()
-    }
+    let sources = null;
 
+    if(this.props.sourcesObject.sources != undefined){
+       sources = Object.keys(this.props.sourcesObject.sources).map((sourceId) => {
+        let source = this.props.sourcesObject.sources[sourceId]
+        return <Source
+          name = {source.name}
+          url = {source.url}
+          key = {source.id} />
+      });
+    }
+    console.log(sources)
     return(
       <div>
-
+        {sources != null ? sources : ''}
       </div>
     );
   }
