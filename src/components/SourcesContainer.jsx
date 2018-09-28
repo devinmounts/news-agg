@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Source from './Source';
 
 function SourcesContainer(props) {
-  console.log(props)
-
-  function onUpdate() {
-  sourcesObject.sources.map((id) => {
-    console.log(id);
-    });
-  }
-
-
-
+  const { sourcesObject } = props
+  console.log(sourcesObject)
     return(
       <div>
-        Sources Works
+        {props.sources}
+        <Source />
       </div>
 
     );
