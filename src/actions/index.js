@@ -5,7 +5,7 @@ export function fetchSources(){
   return function (dispatch) {
     const localSourceSearchId = v4();
     dispatch(requestSources(localSourceSearchId));
-    return fetch('https://newsapi.org/v2/sources?apiKey=93ddfdc17b9d4504abef19dc84092198').then(
+    return fetch('https://newsapi.org/v2/sources?apiKey=5dfe31812ae54b7d966b36c9e2cc939f').then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {
@@ -15,11 +15,11 @@ export function fetchSources(){
   };
 }
 
-export function fetchTopHeadlines(){
+export function fetchTopHeadlines(url){
   return function (dispatch) {
     const localHeadLinesSearchId = v4();
     dispatch(requestTopHeadlines(localHeadLinesSearchId));
-    return fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=93ddfdc17b9d4504abef19dc84092198').then(
+    return fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=5dfe31812ae54b7d966b36c9e2cc939f').then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {

@@ -5,7 +5,8 @@ import SideNav from './SideNav';
 import TopNav from './TopNav';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchSources } from './../actions';
+import { fetchSources, fetchTopHeadlines } from './../actions';
+
 import './styles/App.css';
 
 
@@ -13,9 +14,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     const { sourcesObject, dispatch } = props;
+    console.log(this.sourcesObject)
   }
 
-
+componentDidUpdate(){
+  
+}
 
   render(){
     return (

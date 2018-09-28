@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { fetchSources, fetchTopHeadlines } from './../actions';
 import PropTypes from 'prop-types';
 
-function FormField({ dispatch }) {
-
+function FormField(props) {
+  const { dispatch, sourcesObject } = props
+  console.log(props);
   return(
     <div>
       <form onSubmit={e => {
@@ -25,7 +26,8 @@ function FormField({ dispatch }) {
 }
 
 FormField.propTypes = {
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  sourcesObject: PropTypes.object,
 };
 
 export default connect()(FormField);

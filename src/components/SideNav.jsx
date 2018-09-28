@@ -10,7 +10,7 @@ function SideNav(props){
 
   return(
     <div className='sideNavStyle'>
-      <FormField />
+      <FormField sourcesObject={sourcesObject} />
       <SourcesContainer sourcesObject={sourcesObject} />
     </div>
   );
