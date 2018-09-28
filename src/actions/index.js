@@ -24,6 +24,7 @@ export function fetchTopHeadlines(){
       error => console.log('An error occured', error)
     ).then(function(json) {
       dispatch(receiveTopHeadlines(json.articles, localHeadLinesSearchId));
+      dispatch(updateCurrentArticleListId(localHeadLinesSearchId));
     })
   }
 }
@@ -54,6 +55,11 @@ export const receiveTopHeadlines = (articles, localHeadLinesSearchId) => ({
 export const updateCurrentSourceListId = (localSourceSearchId) => ({
   type: types.UPDATE_SOURCE_LIST_ID,
   localSourceSearchId
+});
+
+export const updateCurrentArticleListId = (localHeadLinesSearchId) => ({
+  type: types.UPDATE_ARTICLE_LIST_ID,
+  localHeadLinesSearchId
 });
 
 export const updateCurrentSourceUrl = (url) => ({
