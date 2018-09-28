@@ -15,7 +15,7 @@ class SourcesContainer extends React.Component {
       overflow: 'scroll',
       backgroundColor: 'green'
     };
-    
+
     let sources = null;
 
     if(this.props.sourcesObject.sources != undefined){
@@ -27,7 +27,6 @@ class SourcesContainer extends React.Component {
           key = {source.id} />;
       });
     }
-    console.log(sources);
     return(
       <div style={divStyle}>
         {sources != null ? sources : ''}

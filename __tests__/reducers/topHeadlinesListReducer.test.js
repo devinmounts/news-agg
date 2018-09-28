@@ -17,7 +17,7 @@ describe('News App', () => {
 
   describe('topHeadlinesListReducer', () => {
     it('Should accept and return initialState', () => {
-      expect(topHeadlinesListReducer(initialState.savedArticlesList, { type: null } )).toEqual(initialState.savedArticlesList);
+      expect(topHeadlinesListReducer(initialState.savedArticleList, { type: null } )).toEqual(initialState.savedArticleList);
     });
 
     it('Should update state when API data is requested', () => {

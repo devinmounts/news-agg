@@ -1,30 +1,30 @@
 import constants from './../constants';
 const { initialState, types } = constants;
 
-const topHeadlinesListReducer = ( state = initialState.savedTopHeadlines, action) => {
-  let newSearchByIdEntry;
-  let newSearchByIdStateSlice;
+const topHeadlinesListReducer = ( state = initialState.savedArticleList, action) => {
+  let newArticleSearchByIdEntry;
+  let newArticleSearchByIdStateSlice;
   switch(action.type) {
   case types.REQUEST_TOPHEADLINES:
-    newSearchByIdEntry = {
+    newArticleSearchByIdEntry = {
       isFetching: true,
       articles: [],
       localHeadLinesSearchId: action.localHeadLinesSearchId
     };
-    newSearchByIdStateSlice = Object.assign({}, state, {
-      [action.localHeadLinesSearchId]: newSearchByIdEntry
+    newArticleSearchByIdStateSlice = Object.assign({}, state, {
+      [action.localHeadLinesSearchId]: newArticleSearchByIdEntry
     });
-    return newSearchByIdStateSlice;
+    return newArticleSearchByIdStateSlice;
   case types.RECEIVE_TOPHEADLINES:
-    newSearchByIdEntry = Object.assign({}, state[action.localHeadLinesSearchId], {
+    newArticleSearchByIdEntry = Object.assign({}, state[action.localHeadLinesSearchId], {
       isFetching: false,
       articles: action.articles,
       localHeadLinesSearchId: action.localHeadLinesSearchId
     });
-    newSearchByIdStateSlice = Object.assign({}, state, {
-      [action.localHeadLinesSearchId]: newSearchByIdEntry
+    newArticleSearchByIdStateSlice = Object.assign({}, state, {
+      [action.localHeadLinesSearchId]: newArticleSearchByIdEntry
     });
-    return newSearchByIdStateSlice;
+    return newArticleSearchByIdStateSlice;
   default:
     return state;
   }

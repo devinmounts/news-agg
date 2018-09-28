@@ -1,6 +1,6 @@
 import React from 'react';
 import sourceListReducer from './sourceListReducer';
-import topHeadlinesListReducer from './sourceListReducer';
+import topHeadlinesListReducer from './topHeadlinesListReducer';
 import currentSourceListReducer from './currentSourceListReducer';
 import currentSourceUrlReducer from './currentSourceUrlReducer';
 import { combineReducers } from 'redux';
@@ -10,7 +10,6 @@ const rootReducer = combineReducers({
   currentSourceUrl: currentSourceUrlReducer,
   savedSourceList: sourceListReducer,
   savedArticleList: topHeadlinesListReducer
-
 });
 
 export default rootReducer;

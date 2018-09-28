@@ -2,29 +2,29 @@ import constants from './../constants';
 const { initialState, types } = constants;
 
 const sourceListReducer = ( state = initialState.savedSourceList, action) => {
-  let newSearchByIdEntry;
-  let newSearchByIdStateSlice;
+  let newSourceSearchByIdEntry;
+  let newSourceSearchByIdStateSlice;
   switch(action.type) {
   case types.REQUEST_SOURCES:
-    newSearchByIdEntry = {
+    newSourceSearchByIdEntry = {
       isFetching: true,
       sources: [],
       localSourceSearchId: action.localSourceSearchId
     };
-    newSearchByIdStateSlice = Object.assign({}, state, {
-      [action.localSourceSearchId]: newSearchByIdEntry
+    newSourceSearchByIdStateSlice = Object.assign({}, state, {
+      [action.localSourceSearchId]: newSourceSearchByIdEntry
     });
-    return newSearchByIdStateSlice;
+    return newSourceSearchByIdStateSlice;
   case types.RECEIVE_SOURCES:
-    newSearchByIdEntry = Object.assign({}, state[action.localSourceSearchId], {
+    newSourceSearchByIdEntry = Object.assign({}, state[action.localSourceSearchId], {
       isFetching: false,
       sources: action.sources,
       localSourceSearchId: action.localSourceSearchId
     });
-    newSearchByIdStateSlice = Object.assign({}, state, {
-      [action.localSourceSearchId]: newSearchByIdEntry
+    newSourceSearchByIdStateSlice = Object.assign({}, state, {
+      [action.localSourceSearchId]: newSourceSearchByIdEntry
     });
-    return newSearchByIdStateSlice;
+    return newSourceSearchByIdStateSlice;
   default:
     return state;
   }

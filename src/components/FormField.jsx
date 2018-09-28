@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchSources } from './../actions';
+import { fetchSources, fetchTopHeadlines } from './../actions';
 import PropTypes from 'prop-types';
 
 function FormField({ dispatch }) {
@@ -11,9 +11,14 @@ function FormField({ dispatch }) {
       <form onSubmit={e => {
         e.preventDefault();
         dispatch(fetchSources())
-        dispatch(fetchTopHeadlines());
       }}>
         <button type='submit'>Search</button>
+      </form>
+      <form onSubmit={e => {
+        e.preventDefault();
+        dispatch(fetchTopHeadlines());
+      }}>
+        <button type='submit'>Headlines</button>
       </form>
 
     </div>
