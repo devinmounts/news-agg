@@ -16,10 +16,16 @@ export function fetchSources(){
 }
 
 export function fetchTopHeadlines(url){
+  let input;
+  if(url === null){
+    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=5dfe31812ae54b7d966b36c9e2cc939f';
+  } else {
+    input = `https://newsapi.org/v2/top-headlines?sources=${url}&apiKey=5dfe31812ae54b7d966b36c9e2cc939f`;  }
   return function (dispatch) {
+    console.log('url is', url)
     const localHeadLinesSearchId = v4();
     dispatch(requestTopHeadlines(localHeadLinesSearchId));
-    return fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=5dfe31812ae54b7d966b36c9e2cc939f').then(
+    return fetch(input).then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {

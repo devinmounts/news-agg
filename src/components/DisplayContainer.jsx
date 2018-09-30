@@ -27,7 +27,6 @@ class DisplayContainer extends React.Component {
     }
     return (
       <div className='display-container'>
-        Container Works
         {articles !=null ? articles : ''}
       </div>
     );

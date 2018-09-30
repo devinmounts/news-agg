@@ -18,7 +18,7 @@ class SourcesContainer extends React.Component {
         let source = this.props.sourcesObject.sources[sourceId];
         return <Source
           name = {source.name}
-          url = {source.url}
+          url = {source.id}
           key = {source.id} />;
       });
     }

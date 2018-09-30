@@ -4,8 +4,7 @@ import { fetchSources, fetchTopHeadlines } from './../actions';
 import PropTypes from 'prop-types';
 
 function FormField(props) {
-  const { dispatch, sourcesObject } = props
-  console.log(props);
+  const { dispatch, sourcesObject, currentSourceUrl } = props
   return(
     <div>
       <form onSubmit={e => {
@@ -16,7 +15,7 @@ function FormField(props) {
       </form>
       <form onSubmit={e => {
         e.preventDefault();
-        dispatch(fetchTopHeadlines());
+        dispatch(fetchTopHeadlines(currentSourceUrl));
       }}>
         <button type='submit'>Headlines</button>
       </form>

@@ -5,6 +5,7 @@ import { updateCurrentSourceUrl } from './../actions';
 import './styles/Source.css';
 
 function Source(props) {
+  console.log(props)
   const { name, url, dispatch } = props;
   function updateUrl() {
     dispatch(updateCurrentSourceUrl(url));

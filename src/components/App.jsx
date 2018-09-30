@@ -14,17 +14,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     const { sourcesObject, dispatch } = props;
-    console.log(this.sourcesObject)
-  }
 
-componentDidUpdate(){
-  
-}
+  }
 
   render(){
     return (
       <div>
-        <SideNav sourcesObject={this.props.sourcesObject} />
+        <SideNav sourcesObject={this.props.sourcesObject} currentSourceUrl={this.props.currentSourceUrl} />
         <TopNav />
         <DisplayContainer articlesObject={this.props.articlesObject}/>
       </div>
@@ -35,6 +31,7 @@ componentDidUpdate(){
 const mapStateToProps = state => {
   let sourceInfo;
   let articleInfo;
+  let currentSourceUrl;
 
   const sourcesObject = state.savedSourceList[state.currentSourceListId];
   const articlesObject = state.savedArticleList[state.currentArticleListId];
@@ -58,13 +55,15 @@ const mapStateToProps = state => {
   }
   return {
     sourcesObject: sourceInfo,
-    articlesObject: articleInfo
+    articlesObject: articleInfo,
+    currentSourceUrl: state.currentSourceUrl
   };
 };
 
 App.propTypes = {
   sourcesObject: PropTypes.object,
-  articlesObject: PropTypes.object
+  articlesObject: PropTypes.object,
+  currentSourceUrl: PropTypes.string
 };
 
 export default connect(mapStateToProps)(App);
