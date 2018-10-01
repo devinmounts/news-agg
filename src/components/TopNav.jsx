@@ -5,7 +5,8 @@ function TopNav(){
 
   return(
     <div className='topNavStyle'>
-    TopNav Works
+      <span className='category'>Top Headlines</span>
+      <span className='category'>All Articles</span>
     </div>
   );
 
