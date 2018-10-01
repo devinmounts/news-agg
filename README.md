@@ -14,7 +14,7 @@
 | Behavior | Input | Output |
 |----------|-------|--------|
 | Program displays top headlines for US on page load | N/A| Display List |
-| Program allows a user to search top headlines by keyword, news source and/or country | Congress, New York Times | Display List is populated with query results |
+| Program allows a user to search top headlines by news source | New York Times | Display List is populated with query results |
 | Program allows user to view results, navigating through multiple 'pages' of content when applicable | Display List: page 1 20 articles; Click: page 2  | Page 2 Display List shows following 20 articles |
 | Program allows users to search all articles in database by keyword, new source and/or language from a specified date range. | Politics, french from 09/26/2018 to 09/27/2018 | Display List returns all articles meeting these parameters |
 | Program allows users to filter search by relevancy, popularity, most recent publication | Politics, french from 09/26/2018 to 09/27/2018: filter by popularity | Display List returns all articles meeting these parameters filtered with popular sources and publishers |
