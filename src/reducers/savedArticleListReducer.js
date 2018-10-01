@@ -1,11 +1,11 @@
 import constants from './../constants';
 const { initialState, types } = constants;
 
-const topHeadlinesListReducer = ( state = initialState.savedArticleList, action) => {
+const savedArticleListReducer = ( state = initialState.savedArticleList, action) => {
   let newArticleSearchByIdEntry;
   let newArticleSearchByIdStateSlice;
   switch(action.type) {
-  case types.REQUEST_TOPHEADLINES:
+  case types.REQUEST_ARTICLES:
     newArticleSearchByIdEntry = {
       isFetching: true,
       articles: [],
@@ -15,7 +15,7 @@ const topHeadlinesListReducer = ( state = initialState.savedArticleList, action)
       [action.localHeadLinesSearchId]: newArticleSearchByIdEntry
     });
     return newArticleSearchByIdStateSlice;
-  case types.RECEIVE_TOPHEADLINES:
+  case types.RECEIVE_ARTICLES:
     newArticleSearchByIdEntry = Object.assign({}, state[action.localHeadLinesSearchId], {
       isFetching: false,
       articles: action.articles,
@@ -30,4 +30,4 @@ const topHeadlinesListReducer = ( state = initialState.savedArticleList, action)
   }
 };
 
-export default topHeadlinesListReducer;
+export default savedArticleListReducer;

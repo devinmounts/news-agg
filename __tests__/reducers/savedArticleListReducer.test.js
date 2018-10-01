@@ -1,5 +1,5 @@
 import constants from "./../../src/constants";
-import topHeadlinesListReducer from './../../src/reducers/topHeadlinesListReducer';
+import savedArticleListReducer from './../../src/reducers/savedArticleListReducer';
 import { createStore } from 'redux';
 import * as actions from './../../src/actions';
 
@@ -13,31 +13,31 @@ const testState = {
 
 describe('News App', () => {
   const { initialState, types } = constants;
-  const store = createStore(topHeadlinesListReducer, initialState);
+  const store = createStore(savedArticleListReducer, initialState);
 
-  describe('topHeadlinesListReducer', () => {
+  describe('savedArticleListReducer', () => {
     it('Should accept and return initialState', () => {
-      expect(topHeadlinesListReducer(initialState.savedArticleList, { type: null } )).toEqual(initialState.savedArticleList);
+      expect(savedArticleListReducer(initialState.savedArticleList, { type: null } )).toEqual(initialState.savedArticleList);
     });
 
     it('Should update state when API data is requested', () => {
-      const action = actions.requestTopHeadlines();
+      const action = actions.requestArticles();
       const newStateEntry = {
         isFetching: true,
         articles: [],
         localHeadLinesSearchId: action.localHeadLinesSearchId
       };
-      expect(topHeadlinesListReducer(initialState.savedArticlesList, action)[action.localHeadLinesSearchId]).toEqual(newStateEntry);
+      expect(savedArticleListReducer(initialState.savedArticlesList, action)[action.localHeadLinesSearchId]).toEqual(newStateEntry);
     })
 
     it('Should update state on receive topHeadlines', () => {
-      const action = actions.receiveTopHeadlines([],1);
+      const action = actions.receiveArticles([],1);
       const newObject = {
         isFetching: false,
         articles: [],
         localHeadLinesSearchId: action.localHeadLinesSearchId
       };
-      expect(topHeadlinesListReducer(testState, action)[action.localHeadLinesSearchId]).toEqual(newObject);
+      expect(savedArticleListReducer(testState, action)[action.localHeadLinesSearchId]).toEqual(newObject);
     })
   })
 });

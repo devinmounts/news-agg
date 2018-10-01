@@ -1,29 +1,30 @@
 import React from 'react';
 import './styles/SearchBar.css';
 import search from './../assets/images/search.png'
+import { fetchArticlesByUserSearch } from './../actions';
+import { connect } from 'react-redux';
 
-class SearchBar extends React.Component {
-  constructor(props){
-    super(props);
+function SearchBar({dispatch}) {
+  let input;
+  return(
+    <div className='searchDiv'>
+      <h1 className='header'>Search global news.</h1>
+      <form onSubmit={e => {
+          e.preventDefault();
+          if (!input.value.trim()) {
+            return;
+          }
+          dispatch(fetchArticlesByUserSearch(input.value.trim()))
+        }}>
+        <input className='input'
+          ref={node => {input = node;}}
+         placeholder="e.g. Economic Analysis"
+        />
+      <button className='button' type='submit'><img className='icon'src={search}/></button>
+      </form>
 
-
-  }
-  render(){
-    return(
-      <div className='searchDiv'>
-        <h1 className='header'>Search global news.</h1>
-        <form>
-          <input className='input'
-           placeholder="e.g. Economic Analysis"
-          />
-        <button className='button' type='submit'><img className='image'src={search}/></button>
-        </form>
-
-      </div>
-    );
-   }
-
-
+    </div>
+  );
 }
 
-export default SearchBar;
+export default connect()(SearchBar);

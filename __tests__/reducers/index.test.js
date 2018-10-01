@@ -1,6 +1,6 @@
 import constants from "./../../src/constants";
 import sourceListReducer from './../../src/reducers/sourceListReducer';
-import topHeadlinesListReducer from './../../src/reducers/topHeadlinesListReducer';
+import savedArticleListReducer from './../../src/reducers/savedArticleListReducer';
 import currentSourceListIdReducer from './../../src/reducers/currentSourceListIdReducer';
 import currentArticleListIdReducer from './../../src/reducers/currentArticleListIdReducer';
 import currentSourceUrlReducer from './../../src/reducers/currentSourceUrlReducer';
@@ -19,7 +19,7 @@ describe('News App', () => {
 
     it('Should contian logic from both reducers', () => {
       expect(store.getState().savedSourceList).toEqual(sourceListReducer(initialState.savedSourceList, { type: null }));
-      expect(store.getState().savedArticleList).toEqual(topHeadlinesListReducer(initialState.savedArticleList, { type: null }));
+      expect(store.getState().savedArticleList).toEqual(savedArticleListReducer(initialState.savedArticleList, { type: null }));
       expect(store.getState().currentSourceListId).toEqual(currentSourceListIdReducer(initialState.currentSourceListId, { type: null }));
       expect(store.getState().currentSourceUrl).toEqual(currentSourceUrlReducer(initialState.currentSourceUrl, { type: null }));
       expect(store.getState().currentArticleListId).toEqual(currentArticleListIdReducer(initialState.currentArticleListId, { type: null }));
