@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/SearchBar.css';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -8,16 +9,20 @@ class SearchBar extends React.Component {
   }
   render(){
     return(
-      <div >
-         <h1>Book unique homes and experiences all over the world.</h1>
-         <input
-           placeholder="economic analysis"
-         />
+      <div className='searchDiv'>
+        <h1 className='header'>Search global news.</h1>
+        <form>
+          <input className='input'
+           placeholder="e.g. Economic Analysis"
+          />
+        <button type='submit'>Search</button>
+        </form>
 
-       </div>
-  }
+      </div>
+    );
+   }
 
-  );
+
 }
 
 export default SearchBar;

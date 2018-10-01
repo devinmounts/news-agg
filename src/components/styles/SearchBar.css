@@ -1,0 +1,23 @@
+.searchDiv {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  color: white;
+}
+
+.header {
+  margin: 2px;
+  padding-left: 5px;
+}
+
+.input {
+  display: inline-block;
+  width: 63%;
+  margin-left: 2%;
+  height: 24px;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px
+};

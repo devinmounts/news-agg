@@ -5,7 +5,7 @@ export function fetchSources(){
   return function (dispatch) {
     const localSourceSearchId = v4();
     dispatch(requestSources(localSourceSearchId));
-    return fetch('https://newsapi.org/v2/sources?apiKey=5dfe31812ae54b7d966b36c9e2cc939f').then(
+    return fetch('https://newsapi.org/v2/sources?apiKey=bc0fb97cde8342c7a79050e1f5e384aa').then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {
@@ -18,11 +18,10 @@ export function fetchSources(){
 export function fetchTopHeadlines(url){
   let input;
   if(url === null){
-    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=5dfe31812ae54b7d966b36c9e2cc939f';
+    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=bc0fb97cde8342c7a79050e1f5e384aa';
   } else {
     input = `https://newsapi.org/v2/top-headlines?sources=${url}&apiKey=5dfe31812ae54b7d966b36c9e2cc939f`;  }
   return function (dispatch) {
-    console.log('url is', url);
     const localHeadLinesSearchId = v4();
     dispatch(requestTopHeadlines(localHeadLinesSearchId));
     return fetch(input).then(
@@ -34,6 +33,14 @@ export function fetchTopHeadlines(url){
     });
   };
 }
+
+// export function fetchArticlesBySearchText(text){
+//   let input;
+//   return function(dispatch) {
+//     const localArticlesByTextSearchId = v4();
+//     dispatch(requestArticles())
+//   }
+// }
 
 export const requestSources = (localSourceSearchId) => ({
   type: types.REQUEST_SOURCES,

@@ -21,6 +21,10 @@ class SourcesContainer extends React.Component {
     console.log(this.state.activeSource)
   }
 
+  componentDidUpdate(){
+    console.log(this.state.activeSource)
+  }
+
   render(){
     let sources = null;
 

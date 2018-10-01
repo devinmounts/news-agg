@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/TopNav.css';
+import SearchBar from './SearchBar';
 
 class TopNav extends React.Component {
   constructor(props) {
@@ -12,9 +13,13 @@ class TopNav extends React.Component {
   render(){
     return(
       <div className='topNavStyle'>
-        <span className='category'>Top Headlines</span>
-        <span className='category'>All Articles</span>
+        <SearchBar />
+        <div className='flex-box' >
+          <span className='category'>Top Headlines</span>
+          <span className='category'>All Articles</span>
+        </div>
       </div>
+
     );
 
   }

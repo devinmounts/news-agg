@@ -1,13 +1,19 @@
 .topNavStyle {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
   width: 76%;
   height: 200px;
   border: solid black .5px;
   float: right;
   background-color: #153042;
   position: relative;
+}
+
+.flex-box {
+  position:absolute;
+  bottom: 0;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
 
 .category{
