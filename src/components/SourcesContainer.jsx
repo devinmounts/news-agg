@@ -6,9 +6,18 @@ class SourcesContainer extends React.Component {
   constructor(props){
     super(props);
     const { sourcesObject } = props;
+    this.state = {
+      activeSource: false
+    }
+    this.handleActiveSource = this.handleActiveSource.bind(this);
   }
 
-
+  handleActiveSource(){
+    this.setState({
+      activeSource: !this.state.activeSource
+    });
+    console.log(this.state)
+  }
 
   render(){
     let sources = null;
@@ -19,7 +28,8 @@ class SourcesContainer extends React.Component {
         return <Source
           name = {source.name}
           url = {source.id}
-          key = {source.id} />;
+          key = {source.id}
+          onHandleActiveSource={this.handleActiveSource}/>;
       });
     }
     return(

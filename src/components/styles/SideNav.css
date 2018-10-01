@@ -1,6 +1,6 @@
 .sideNavStyle {
   width: 23%;
-  height: calc(110vh - 50px);
+  height: 100%;
   float: left;
   display: inline-block;
   position: relative;

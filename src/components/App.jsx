@@ -1,11 +1,10 @@
 import React from 'react';
-import FormField from './FormField';
 import DisplayContainer from './DisplayContainer';
 import SideNav from './SideNav';
 import TopNav from './TopNav';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchSources, fetchTopHeadlines } from './../actions';
+import 
 
 import './styles/App.css';
 
@@ -51,7 +50,7 @@ const mapStateToProps = state => {
     },
     articleInfo = {
       articles: ''
-    }
+    };
   }
   return {
     sourcesObject: sourceInfo,

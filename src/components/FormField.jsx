@@ -4,12 +4,12 @@ import { fetchSources, fetchTopHeadlines } from './../actions';
 import PropTypes from 'prop-types';
 
 function FormField(props) {
-  const { dispatch, sourcesObject, currentSourceUrl } = props
+  const { dispatch, sourcesObject, currentSourceUrl } = props;
   return(
     <div>
       <form onSubmit={e => {
         e.preventDefault();
-        dispatch(fetchSources())
+        dispatch(fetchSources());
       }}>
         <button type='submit'>Search</button>
       </form>

@@ -22,7 +22,7 @@ export function fetchTopHeadlines(url){
   } else {
     input = `https://newsapi.org/v2/top-headlines?sources=${url}&apiKey=5dfe31812ae54b7d966b36c9e2cc939f`;  }
   return function (dispatch) {
-    console.log('url is', url)
+    console.log('url is', url);
     const localHeadLinesSearchId = v4();
     dispatch(requestTopHeadlines(localHeadLinesSearchId));
     return fetch(input).then(
@@ -31,8 +31,8 @@ export function fetchTopHeadlines(url){
     ).then(function(json) {
       dispatch(receiveTopHeadlines(json.articles, localHeadLinesSearchId));
       dispatch(updateCurrentArticleListId(localHeadLinesSearchId));
-    })
-  }
+    });
+  };
 }
 
 export const requestSources = (localSourceSearchId) => ({
@@ -44,7 +44,7 @@ export const requestTopHeadlines = (localHeadLinesSearchId, url) => ({
   type: types.REQUEST_TOPHEADLINES,
   localHeadLinesSearchId,
   url
-})
+});
 
 export const receiveSources = (sources, localSourceSearchId) => ({
   type: types.RECEIVE_SOURCES,
@@ -56,7 +56,7 @@ export const receiveTopHeadlines = (articles, localHeadLinesSearchId) => ({
   type: types.RECEIVE_TOPHEADLINES,
   articles: articles,
   localHeadLinesSearchId
-})
+});
 
 export const updateCurrentSourceListId = (localSourceSearchId) => ({
   type: types.UPDATE_SOURCE_LIST_ID,

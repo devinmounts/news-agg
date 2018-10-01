@@ -5,11 +5,14 @@ import { updateCurrentSourceUrl } from './../actions';
 import './styles/Source.css';
 
 function Source(props) {
-  console.log(props)
-  const { name, url, dispatch } = props;
+  const { name, url, dispatch, onHandleActiveSource } = props;
+  console.log(onHandleActiveSource)
+
   function updateUrl() {
+    onHandleActiveSource()
     dispatch(updateCurrentSourceUrl(url));
   }
+
 
   return(
     <div className='source'>
@@ -21,6 +24,7 @@ function Source(props) {
 Source.propTypes = {
   name: PropTypes.string,
   url: PropTypes.string,
-  key: PropTypes.string
+  key: PropTypes.string,
+  onHandleActiveSource: PropTypes.func
 };
 export default connect()(Source);

@@ -9,7 +9,6 @@ class DisplayContainer extends React.Component {
 
   }
   render(){
-    console.log(this.props)
     let articles = null;
 
     if (this.props.articlesObject.articles != undefined){
@@ -22,7 +21,7 @@ class DisplayContainer extends React.Component {
           description = {article.description}
           url = {article.url}
           image = {article.urlToImage}
-          key = {articleId} />
+          key = {articleId} />;
       });
     }
     return (
