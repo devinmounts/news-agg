@@ -10,7 +10,7 @@ function SideNav(props){
   return(
     <div className='sideNavStyle'>
       <FormField sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl} />
-      <SourcesContainer sourcesObject={sourcesObject} />
+      <SourcesContainer sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl}/>
     </div>
   );
 }

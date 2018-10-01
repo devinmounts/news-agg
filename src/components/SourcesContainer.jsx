@@ -18,14 +18,10 @@ class SourcesContainer extends React.Component {
     this.setState({
       activeSource: sourceId
     });
-    console.log(this.state.activeSource)
-  }
-
-  componentDidUpdate(){
-    console.log(this.state.activeSource)
   }
 
   render(){
+    console.log('SourcesContainer', this.props)
     let sources = null;
 
     if(this.props.sourcesObject.sources != undefined){

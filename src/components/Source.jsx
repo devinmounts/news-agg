@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateCurrentSourceUrl } from './../actions';
+import { fetchTopHeadlines } from './../actions';
+
 import './styles/Source.css';
 
 function Source(props) {
@@ -11,6 +13,7 @@ function Source(props) {
     console.log('click', url);
     onHandleActiveSource(url);
     dispatch(updateCurrentSourceUrl(url));
+    dispatch(fetchTopHeadlines(url));
   }
 
 

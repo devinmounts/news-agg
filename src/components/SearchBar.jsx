@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/SearchBar.css';
+import search from './../assets/images/search.png'
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -15,7 +16,7 @@ class SearchBar extends React.Component {
           <input className='input'
            placeholder="e.g. Economic Analysis"
           />
-        <button type='submit'>Search</button>
+        <button className='button' type='submit'><img className='image'src={search}/></button>
         </form>
 
       </div>

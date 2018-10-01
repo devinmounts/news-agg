@@ -20,4 +20,16 @@
   font-size: 20px;
   padding: 5px;
   margin-top: 5px
-};
+}
+
+.image {
+  width: 65px;
+  vertical-align: bottom;
+  color: white;
+}
+
+.button {
+  height: 38px;
+  background-color: #153042;
+  border: none;
+}

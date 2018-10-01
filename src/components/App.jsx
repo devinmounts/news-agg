@@ -16,12 +16,10 @@ class App extends React.Component {
     const { sourcesObject, dispatch, currentSourceUrl, match } = props;
 
   }
-  componentDidMount(){
-    console.log('mounted');
-    this.props.dispatch(fetchSources());
-    this.props.dispatch(fetchTopHeadlines(this.props.currentSourceUrl));
-
-  }
+  // componentDidMount(){
+  //   this.props.dispatch(fetchSources());
+  //   this.props.dispatch(fetchTopHeadlines(this.props.currentSourceUrl));
+  // }
 
   render(){
     console.log(this.props)

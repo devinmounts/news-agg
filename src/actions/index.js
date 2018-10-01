@@ -5,7 +5,7 @@ export function fetchSources(){
   return function (dispatch) {
     const localSourceSearchId = v4();
     dispatch(requestSources(localSourceSearchId));
-    return fetch('https://newsapi.org/v2/sources?apiKey=bc0fb97cde8342c7a79050e1f5e384aa').then(
+    return fetch('https://newsapi.org/v2/sources?apiKey=bcefe0802d134bb38885e5f3b1067d82').then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {
@@ -18,7 +18,7 @@ export function fetchSources(){
 export function fetchTopHeadlines(url){
   let input;
   if(url === null){
-    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=bc0fb97cde8342c7a79050e1f5e384aa';
+    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=bcefe0802d134bb38885e5f3b1067d82';
   } else {
     input = `https://newsapi.org/v2/top-headlines?sources=${url}&apiKey=5dfe31812ae54b7d966b36c9e2cc939f`;  }
   return function (dispatch) {
