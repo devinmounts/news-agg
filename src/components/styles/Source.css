@@ -7,7 +7,17 @@
   color: grey;
 }
 .source:hover {
-  background-color: #eb803c;
+  background-color: ;
   cursor: pointer;
+  color: #153042;
+}
+
+.active {
+  background-color: #eb803c;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: solid black 1px;
+  border-radius: 5px;
   color: #153042;
 }
