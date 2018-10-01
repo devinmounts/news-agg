@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Source from './Source';
+import { NavLink } from 'react-router-dom'
 
 class SourcesContainer extends React.Component {
   constructor(props){
@@ -25,11 +26,11 @@ class SourcesContainer extends React.Component {
     if(this.props.sourcesObject.sources != undefined){
       sources = Object.keys(this.props.sourcesObject.sources).map((sourceId) => {
         let source = this.props.sourcesObject.sources[sourceId];
-        return <Source
+        return <NavLink to={`/${source.id}`} key={source.id}><Source
           name = {source.name}
           url = {source.id}
           key = {source.id}
-          onHandleActiveSource={this.handleActiveSource}/>;
+          onHandleActiveSource={this.handleActiveSource}/></NavLink>;
       });
     }
     return(

@@ -6,12 +6,15 @@ import { createStore, applyMiddleware } from 'redux';
 import middlewareLogger from './middleware/middleware-logger';
 import rootReducer from './reducers';
 import thunkMiddleware from 'redux-thunk';
+import { HashRouter } from 'react-router-dom';
 
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, middlewareLogger));
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <HashRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HashRouter>,
   document.getElementById('react-app-root')
 );
