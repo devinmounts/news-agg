@@ -8,6 +8,13 @@ class TopNav extends React.Component {
     this.state = {
       activeTab: ''
     }
+    this.activateTab = this.activateTab.bind(this);
+  }
+
+  activateTab(value){
+    this.setState({
+      activeTab: value
+    })
   }
 
   render(){
@@ -15,8 +22,8 @@ class TopNav extends React.Component {
       <div className='topNavStyle'>
         <SearchBar />
         <div className='flex-box' >
-          <span className='category'>Top Headlines</span>
-          <span className='category'>All Articles</span>
+          <span onClick={(e) => this.activateTab(e.target.attributes[0].value)} value='top-headlines' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category'}>Top Headlines</span>
+          <span onClick={(e) => this.activateTab(e.target.attributes[0].value)} value='everything' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category'}>All Articles</span>
         </div>
       </div>
 

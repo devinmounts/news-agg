@@ -23,15 +23,12 @@
   color: grey;
   font-size: 20px;
 }
-/*
-.category-two{
-  position: absolute;
-  bottom: 0;
-  padding: 10px;
 
-  left: 138px;
-  margin-right: 10px;
-  border: solid #eb803c 2px;
+.activeTab {
+  padding: 10px;
+  height: 30px;
+  border: solid #eb803c 3px;
+  border-bottom: none;
   color: grey;
   font-size: 20px;
-} */
+}
