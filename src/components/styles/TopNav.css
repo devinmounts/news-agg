@@ -22,6 +22,7 @@
   border: solid grey 3px;
   color: grey;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .category-two{
@@ -31,6 +32,32 @@
   border-left: none;
   color: grey;
   font-size: 20px;
+  cursor: pointer;
+}
+
+.category-one:hover{
+  padding: 10px;
+  height: 30px;
+  border: solid grey 3px;
+  border-bottom: none;
+  color: grey;
+  font-size: 21px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.category-two:hover{
+  padding: 10px;
+  height: 30px;
+  border: solid grey 3px;
+  border-bottom: none;
+  border-left: none;
+  color: grey;
+  font-size: 21px;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .activeTab {
@@ -39,5 +66,25 @@
   border: solid grey 3px;
   border-bottom: none;
   color: grey;
-  font-size: 20px;
+  font-size: 21px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login {
+  float: right;
+  font-size: 18px;
+  text-decoration: underline;
+  color: grey;
+  padding: 5px;
+}
+
+.login:hover {
+  float: right;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  color: grey;
+  padding: 5px;
 }

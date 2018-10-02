@@ -26,6 +26,10 @@
   width: 65px;
   vertical-align: bottom;
   color: white;
+  cursor: pointer;
+}
+
+.icon:hover {
 }
 
 .button {

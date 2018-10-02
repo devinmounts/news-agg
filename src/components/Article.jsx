@@ -9,17 +9,22 @@ function Article(props) {
 
   return(
     <div className='article-container'>
-      <img className='image' src={image} />
+      <h5 className='article-source'>Source: {source}</h5>
+      <a href={url}><img className='image' src={image} /></a>
       <h1>{title}</h1>
       <h5>{author}</h5>
       <p>{description}</p>
-      <h5><a href={url}>Read More at {source}</a></h5>
+
     </div>
   );
 }
 
 Article.propTypes = {
-  name: PropTypes.string,
+  title: PropTypes.string,
+  author: PropTypes.string,
+  source: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
   url: PropTypes.string,
   key: PropTypes.string
 };
