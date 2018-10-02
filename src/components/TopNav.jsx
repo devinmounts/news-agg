@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/TopNav.css';
 import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
+import * as routes from './../constants/routes';
 
 class TopNav extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class TopNav extends React.Component {
     return(
       <div className='topNavStyle'>
         <SearchBar />
-        <Link className="login" to='/login'> Login</Link><Link className="login" to='/login'>Join </Link>
+        <Link className="login" to={routes.SIGN_IN}> Login</Link><Link className="login" to={routes.SIGN_UP}>Join </Link>
         <div className='flex-box' >
           <span onClick={(e) => this.activateTab(e.target.attributes[0].value)} value='top-headlines' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category-one'}>Top Headlines</span>
           <span onClick={(e) => this.activateTab(e.target.attributes[0].value)} value='everything' className={this.state.activeTab === 'everything' ? 'activeTab' : 'category-two'}>All Articles</span>

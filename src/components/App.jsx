@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import { fetchSources, fetchTopHeadlines } from './../actions';
+import * as routes from './../constants/routes';
 
 import './styles/App.css';
 
@@ -28,8 +29,9 @@ class App extends React.Component {
         <SideNav sourcesObject={this.props.sourcesObject} currentSourceUrl={this.props.currentSourceUrl} />
         <TopNav />
         <Switch>
-          <Route exact path='/' render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
-          <Route path='/test' component={DisplayContainer} />
+          <Route exact path={routes.LANDING} render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
+          <Route exact path={routes.SIGN_IN} component={SignInPage} />
+          <Route exact path={routes.SIGN_UP} component={SignUpPage} />
           <Route path={this.props.currentSourceUrl != null ? `/${this.props.currentSourceUrl}` : '/'} render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
         </Switch>
       </div>
