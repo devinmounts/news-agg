@@ -36,7 +36,7 @@ export function fetchTopHeadlines(url){
 
 export function fetchArticlesByUserSearch(text){
   let input;
-  input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`
+  input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
   return function(dispatch) {
     const localArticlesByTextSearchId = v4();
     dispatch(requestArticles(localArticlesByTextSearchId));
@@ -44,11 +44,11 @@ export function fetchArticlesByUserSearch(text){
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json){
-      console.log(json)
+      console.log(json);
       dispatch(receiveArticles(json.articles, localArticlesByTextSearchId));
       dispatch(updateCurrentArticleListId(localArticlesByTextSearchId));
-    })
-  }
+    });
+  };
 }
 
 export const requestSources = (localSourceSearchId) => ({

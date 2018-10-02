@@ -7,14 +7,14 @@ class TopNav extends React.Component {
     super(props);
     this.state = {
       activeTab: ''
-    }
+    };
     this.activateTab = this.activateTab.bind(this);
   }
 
   activateTab(value){
     this.setState({
       activeTab: value
-    })
+    });
   }
 
   render(){

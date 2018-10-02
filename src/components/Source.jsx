@@ -19,7 +19,7 @@ function Source(props) {
 
   return(
     <div className={url === activeSource ? 'active' : 'source'}>
-    <span onClick={updateUrl}>{name}</span>
+      <span onClick={updateUrl}>{name}</span>
     </div>
   );
 }
