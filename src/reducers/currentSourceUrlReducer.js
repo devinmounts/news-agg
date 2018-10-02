@@ -1,7 +1,7 @@
 import constants from './../constants';
 const { initialState, types } = constants;
 
-const sourceUrlReducer = ( state = initialState.currentSourceUrl, action) => {
+const currentSourceUrlReducer = ( state = initialState.currentSourceUrl, action) => {
   switch(action.type) {
   case types.UPDATE_SOURCE_URL:
     return action.url;
@@ -10,4 +10,4 @@ const sourceUrlReducer = ( state = initialState.currentSourceUrl, action) => {
   }
 };
 
-export default sourceUrlReducer;
+export default currentSourceUrlReducer;

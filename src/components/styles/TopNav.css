@@ -16,10 +16,19 @@
   align-items: flex-end;
 }
 
-.category{
+.category-one{
   padding: 10px;
   height: 30px;
-  border: solid #eb803c 3px;
+  border: solid grey 3px;
+  color: grey;
+  font-size: 20px;
+}
+
+.category-two{
+  padding: 10px;
+  height: 30px;
+  border: solid grey 3px;
+  border-left: none;
   color: grey;
   font-size: 20px;
 }
@@ -27,7 +36,7 @@
 .activeTab {
   padding: 10px;
   height: 30px;
-  border: solid #eb803c 3px;
+  border: solid grey 3px;
   border-bottom: none;
   color: grey;
   font-size: 20px;
