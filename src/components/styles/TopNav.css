@@ -65,7 +65,7 @@
   height: 30px;
   border: solid grey 3px;
   border-bottom: none;
-  color: grey;
+  color: #eb803c;
   font-size: 21px;
   font-weight: bold;
   text-decoration: underline;
@@ -75,7 +75,6 @@
 .login {
   float: right;
   font-size: 18px;
-  text-decoration: underline;
   color: grey;
   padding: 5px;
 }
@@ -84,7 +83,6 @@
   float: right;
   font-weight: bold;
   font-size: 18px;
-  text-decoration: none;
-  color: grey;
+  color: #eb803c;
   padding: 5px;
 }

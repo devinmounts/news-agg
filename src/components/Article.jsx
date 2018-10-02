@@ -24,19 +24,23 @@ class Article extends React.Component {
     const { title, author, source, description, url, image, dispatch } = this.props;
     let sourceDisplay = null;
     let titleDisplay = null;
+    let imageDisplay = null;
     if(this.state.readMoreVisible){
-      sourceDisplay = <h5 className='read-source'>READ MORE</h5>
-      titleDisplay = <h1 className='read-title'>{title}</h1>
+      sourceDisplay = <h5 className='read-source'>READ MORE</h5>;
+      titleDisplay = <h1 className='read-title'>{title}</h1>;
+      imageDisplay = <a href={url}><img className='read-image' onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
     } else {
-      sourceDisplay = <h5 className='article-source'>Source: {source}</h5>
-      titleDisplay = <h1>{title}</h1>
+      sourceDisplay = <h5 className='article-source'>Source: {source}</h5>;
+      titleDisplay = <h1>{title}</h1>;
+      imageDisplay = <a href={url}><img onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
+
 
     }
 
     return(
       <div className='article-container'>
         {sourceDisplay}
-        <a href={url}><img onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>
+        {imageDisplay}
         {titleDisplay}
         <h5>{author}</h5>
         <p>{description}</p>
