@@ -2,7 +2,7 @@ export const initialState = {
   currentSourceListId: 0,
   currentArticleListId: 0,
   currentSourceUrl: null,
-  searchText: '',
+  currentSearchText: '',
   savedSourceList: {
     0: {}
   },
