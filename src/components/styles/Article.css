@@ -20,8 +20,31 @@
 
 .article-source {
   display: inline-block;
-  float: right;
   color: black;
   font-size: 15px;
   margin: 5px;
+  padding: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: 100;
+  left: 10;
+}
+
+.read-source {
+  display: inline-block;
+  color: black;
+  font-size: 15px;
+  margin: 5px;
+  padding: 3px;
+  text-decoration: underline;
+  background-color: yellow;
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 100;
+  left: 10;
+}
+
+.read-title {
+  text-decoration: underline;
+  font-family: sans-serif;
 }
