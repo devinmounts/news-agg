@@ -11,8 +11,13 @@ class SearchBar extends React.Component {
     let text = null;
     let dateFrom = null;
     let dateTo = null;
+
+    this.state = {
+      expansionVisible: false
+    }
     this.handleDateFrom = this.handleDateFrom.bind(this);
     this.handleDateTo = this.handleDateTo.bind(this);
+    this.handleExpansionVisible = this.handleExpansionVisible.bind(this);
   }
 
 
@@ -24,7 +29,17 @@ class SearchBar extends React.Component {
     this.dateTo = selectedDateTo
   }
 
+  handleExpansionVisible(){
+    this.setState({
+      expansionVisible: !this.state.expansionVisible
+    });
+  }
+
   render(){
+    let expansionShow = null;
+    if(this.state.expansionVisible){
+      expansionShow = <SearchExpansion onHandleDateFrom={this.handleDateFrom} onHandleDateTo={this.handleDateTo} />
+    }
     const { dispatch } = this.props
     return(
       <div className='searchDiv'>
@@ -36,13 +51,13 @@ class SearchBar extends React.Component {
           }
           dispatch(fetchArticlesByUserSearch(this.text.value.trim(), this.dateFrom, this.dateTo));
         }}>
-          <input className='input'
+          <input onClick={this.handleExpansionVisible}className='input'
             ref={node => {this.text = node;}}
             placeholder="e.g. Economic Analysis"
           />
-          <button className='button' type='submit'><img className='icon'src={search}/></button>
+        <button onClick={this.handleExpansionVisible}className='button' type='submit'><img className='icon'src={search}/></button>
         </form>
-        <SearchExpansion onHandleDateFrom={this.handleDateFrom} onHandleDateTo={this.handleDateTo} />
+        {expansionShow}
       </div>
     );
   }
