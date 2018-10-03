@@ -31,7 +31,7 @@ class Article extends React.Component {
       imageDisplay = <a href={url}><img className='read-image' onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
     } else {
       sourceDisplay = <h5 className='article-source'>Source: {source}</h5>;
-      titleDisplay = <h1>{title}</h1>;
+      titleDisplay = <a href={url}><h1>{title}</h1></a>;
       imageDisplay = <a href={url}><img onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
 
 
