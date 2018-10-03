@@ -19,12 +19,11 @@
   font-weight: 700;
   font-size: 20px;
   padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 18px;
+  top: 0%;
 }
 
 .icon {
-  width: 82px;
+  width: 50px;
   vertical-align: bottom;
   color: white;
   cursor: pointer;
@@ -39,7 +38,7 @@
 }
 
 .icon:hover {
-  width: 82px;
+  width: 50px;
   vertical-align: bottom;
   color: grey;
   cursor: pointer;

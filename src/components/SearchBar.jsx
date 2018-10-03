@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/SearchBar.css';
 import search from './../assets/images/search.png';
 import { fetchArticlesByUserSearch } from './../actions';
+import SearchExpansion from './SearchExpansion';
 import { connect } from 'react-redux';
 
 function SearchBar({dispatch}) {
@@ -22,7 +23,7 @@ function SearchBar({dispatch}) {
         />
         <button className='button' type='submit'><img className='icon'src={search}/></button>
       </form>
-
+      <SearchExpansion />
     </div>
   );
 }

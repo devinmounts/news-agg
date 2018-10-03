@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateCurrentSourceUrl } from './../actions';
 import './styles/Article.css';
+import Moment from 'moment';
 
 class Article extends React.Component {
   constructor(props){
@@ -33,8 +34,14 @@ class Article extends React.Component {
       sourceDisplay = <h5 className='article-source'>Source: {source}</h5>;
       titleDisplay = <a href={url}><h1>{title}</h1></a>;
       imageDisplay = <a href={url}><img onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
+    }
 
-
+    let dateDisplay = new Moment(date).from(new Moment());
+    let authorDisplay = null;
+    if(author === null) {
+      authorDisplay = 'N/A'
+    } else {
+      authorDisplay = author
     }
 
     return(
@@ -42,7 +49,7 @@ class Article extends React.Component {
         {sourceDisplay}
         {imageDisplay}
         {titleDisplay}
-        <span>{author}</span> - <span>{date}</span>
+        <span>{authorDisplay}</span> - <span>{dateDisplay}</span>
         <p>{description}</p>
       </div>
     );
