@@ -34,12 +34,12 @@ export function fetchTopHeadlines(url){
   };
 }
 
-export function fetchArticlesByUserSearch(text, dateFrom, dateTo){
+export function fetchArticlesByUserSearch(text, dateFrom, dateTo, sortFilter){
   let input;
-  console.log(dateFrom);
-  console.log(dateTo);
   if(dateFrom != null && dateTo != null){
     input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+  } else if (dateFrom != null && dateTo != null && sortFilter != ''){
+    input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&sortBy=${sortFilter}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
   } else {
     input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
   }

@@ -11,12 +11,14 @@ class SearchBar extends React.Component {
     let text = null;
     let dateFrom = null;
     let dateTo = null;
+    let sortFilter = null;
 
     this.state = {
       expansionVisible: false
     }
     this.handleDateFrom = this.handleDateFrom.bind(this);
     this.handleDateTo = this.handleDateTo.bind(this);
+    this.handleSortFilter = this.handleSortFilter.bind(this);
     this.handleExpansionVisible = this.handleExpansionVisible.bind(this);
   }
 
@@ -29,6 +31,10 @@ class SearchBar extends React.Component {
     this.dateTo = selectedDateTo
   }
 
+  handleSortFilter(selectedSortFilter){
+    this.sortFilter = selectedSortFilter
+  }
+
   handleExpansionVisible(){
     this.setState({
       expansionVisible: !this.state.expansionVisible
@@ -38,7 +44,7 @@ class SearchBar extends React.Component {
   render(){
     let expansionShow = null;
     if(this.state.expansionVisible){
-      expansionShow = <SearchExpansion onHandleDateFrom={this.handleDateFrom} onHandleDateTo={this.handleDateTo} />
+      expansionShow = <SearchExpansion onHandleDateFrom={this.handleDateFrom} onHandleDateTo={this.handleDateTo} onHandleSortFilter={this.handleSortFilter} />
     }
     const { dispatch } = this.props
     return(
@@ -49,13 +55,13 @@ class SearchBar extends React.Component {
           if (!this.text.value.trim()) {
             return;
           }
-          dispatch(fetchArticlesByUserSearch(this.text.value.trim(), this.dateFrom, this.dateTo));
+          dispatch(fetchArticlesByUserSearch(this.text.value.trim(), this.dateFrom, this.dateTo, this.sortFilter));
         }}>
           <input onClick={this.handleExpansionVisible}className='input'
             ref={node => {this.text = node;}}
             placeholder="e.g. Economic Analysis"
           />
-        <button onClick={this.handleExpansionVisible}className='button' type='submit'><img className='icon'src={search}/></button>
+        <button onClick={this.handleExpansionVisible} className='button' type='submit'><img className='icon'src={search}/></button>
         </form>
         {expansionShow}
       </div>

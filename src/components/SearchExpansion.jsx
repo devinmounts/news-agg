@@ -6,6 +6,8 @@ function SearchExpansion(props) {
   console.log(props)
   let dateFrom;
   let dateTo;
+  let sortFilter;
+
   function handleFromDate(e){
     dateFrom = e.target.value;
     props.onHandleDateFrom(dateFrom);
@@ -16,24 +18,26 @@ function SearchExpansion(props) {
     props.onHandleDateTo(dateTo);
   }
 
-//   <select >
-//     <option>Sort By</option>
-//     <option value='relevancy'>Most Relevant</option>
-//     <option value='popularity'>Popular Sources</option>
-//     <option value='publishedAt'>Most Recent</option>
-//   </select>
-// </div>
-
+  function handleSortFilter(e){
+    sortFilter = e.target.value;
+  }
 
 
   return (
     <div className='search-expansion' >
+      <h5 className='filter-title'>Filter Options:</h5>
       <div className='date-div'>
         <span>From: </span><input onChange={handleFromDate} ref={node => {dateFrom = node}} type='date' /><br/>
         <span>To:</span><input onChange={handleToDate} ref={node => {dateTo = node}} className='to-date' type='date' />
       </div>
-      <div>
-      <p className='inline-p'>Filter Options</p>
+      <div className='sort-filter'>
+        <select onChange={handleSortFilter} ref={node =>{sortFilter = node}}>
+          <option value=''>Sort By</option>
+          <option value='relevancy'>Most Relevant</option>
+          <option value='popularity'>Popular Sources</option>
+          <option value='publishedAt'>Most Recent</option>
+        </select>
+
       </div>
     </div>
   )
@@ -41,7 +45,8 @@ function SearchExpansion(props) {
 
 SearchExpansion.propTypes = {
   onHandleDateFrom: PropTypes.func,
-  onHandleDateTo: PropTypes.func
+  onHandleDateTo: PropTypes.func,
+  onHandleSortFilter: PropTypes.func
 }
 
 export default SearchExpansion;
