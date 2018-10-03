@@ -34,9 +34,16 @@ export function fetchTopHeadlines(url){
   };
 }
 
-export function fetchArticlesByUserSearch(text){
+export function fetchArticlesByUserSearch(text, dateFrom, dateTo){
   let input;
-  input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+  console.log(dateFrom);
+  console.log(dateTo);
+  if(dateFrom != null && dateTo != null){
+    input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+  } else {
+    input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+  }
+
   return function(dispatch) {
     const localArticlesByTextSearchId = v4();
     dispatch(requestArticles(localArticlesByTextSearchId));

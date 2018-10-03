@@ -16,6 +16,13 @@ function SearchExpansion(props) {
     props.onHandleDateTo(dateTo);
   }
 
+//   <select >
+//     <option>Sort By</option>
+//     <option value='relevancy'>Most Relevant</option>
+//     <option value='popularity'>Popular Sources</option>
+//     <option value='publishedAt'>Most Recent</option>
+//   </select>
+// </div>
 
 
 
@@ -26,17 +33,8 @@ function SearchExpansion(props) {
         <span>To:</span><input onChange={handleToDate} ref={node => {dateTo = node}} className='to-date' type='date' />
       </div>
       <div>
-        <select >
-          <option>Sort By</option>
-          <option value='relevancy'>Most Relevant</option>
-          <option value='popularity'>Popular Sources</option>
-          <option value='publishedAt'>Most Recent</option>
-        </select>
-      </div>
-
-
-      <button className="buttonStyle"  value="city" >City</button>
       <p className='inline-p'>Filter Options</p>
+      </div>
     </div>
   )
 }

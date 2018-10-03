@@ -25,7 +25,7 @@ class SearchBar extends React.Component {
   }
 
   render(){
-    const { dispatch } = props
+    const { dispatch } = this.props
     return(
       <div className='searchDiv'>
         <h1 className='header'>Search global news.</h1>
