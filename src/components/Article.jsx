@@ -21,7 +21,7 @@ class Article extends React.Component {
   }
 
   render(){
-    const { title, author, source, description, url, image, dispatch } = this.props;
+    const { title, author, date, source, description, url, image, dispatch } = this.props;
     let sourceDisplay = null;
     let titleDisplay = null;
     let imageDisplay = null;
@@ -42,7 +42,7 @@ class Article extends React.Component {
         {sourceDisplay}
         {imageDisplay}
         {titleDisplay}
-        <h5>{author}</h5>
+        <span>{author}</span> - <span>{date}</span>
         <p>{description}</p>
       </div>
     );
@@ -52,6 +52,7 @@ class Article extends React.Component {
 Article.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
+  date: PropTypes.string,
   source: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,

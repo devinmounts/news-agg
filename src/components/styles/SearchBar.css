@@ -19,21 +19,29 @@
   font-weight: 700;
   font-size: 20px;
   padding: 5px;
-  margin-top: 5px
+  margin-top: 5px;
+  margin-bottom: 18px;
 }
 
 .icon {
-  width: 65px;
+  width: 82px;
   vertical-align: bottom;
   color: white;
   cursor: pointer;
 }
 
-.icon:hover {
-}
 
 .button {
-  height: 38px;
+  margin-left: 10px;
   background-color: #153042;
   border: none;
+  vertical-align: bottom;
+}
+
+.icon:hover {
+  width: 82px;
+  vertical-align: bottom;
+  color: grey;
+  cursor: pointer;
+  transform: scaleX(1.15);
 }

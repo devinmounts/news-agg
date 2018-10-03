@@ -17,6 +17,7 @@ class DisplayContainer extends React.Component {
         return <Article
           title = {article.title}
           author = {article.author}
+          date = {article.publishedAt}
           source = {article.source.name}
           description = {article.description}
           url = {article.url}
@@ -30,6 +31,16 @@ class DisplayContainer extends React.Component {
       </div>
     );
   }
+}
+
+DisplayContainer.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  date: PropTypes.string,
+  source: PropTypes.string,
+  description: PropTypes.string,
+  url: PropTypes.string,
+  image: PropTypes.string,
 }
 
 export default DisplayContainer;
