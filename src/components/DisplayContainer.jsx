@@ -10,7 +10,7 @@ class DisplayContainer extends React.Component {
   }
   render(){
     let articles = null;
-    if(this.props.articlesObject.articles != undefined && !this.props.articlesObject.articles.length > 0){
+    if(this.props.articlesObject.articles != undefined && !this.props.articlesObject.articles.length < 1 ){
         articles = Object.keys(this.props.articlesObject.articles).map((articleId) => {
           let article = this.props.articlesObject.articles[articleId];
           return <Article
