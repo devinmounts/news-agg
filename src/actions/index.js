@@ -5,7 +5,7 @@ export function fetchSources(){
   return function (dispatch) {
     const localSourceSearchId = v4();
     dispatch(requestSources(localSourceSearchId));
-    return fetch('https://newsapi.org/v2/sources?apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce').then(
+    return fetch('https://newsapi.org/v2/sources?apiKey=81351c3adc5d41898a27d48efe9c38cd').then(
       response => response.json(),
       error => console.log('An error occured', error)
     ).then(function(json) {
@@ -18,9 +18,9 @@ export function fetchSources(){
 export function fetchTopHeadlines(url){
   let input;
   if(url === null){
-    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce';
+    input = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=81351c3adc5d41898a27d48efe9c38cd';
   } else {
-    input = `https://newsapi.org/v2/top-headlines?sources=${url}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;  }
+    input = `https://newsapi.org/v2/top-headlines?sources=${url}&apiKey=81351c3adc5d41898a27d48efe9c38cd`;  }
   return function (dispatch) {
     const localHeadLinesSearchId = v4();
     dispatch(requestArticles(localHeadLinesSearchId));
@@ -38,16 +38,16 @@ export function fetchArticlesByUserSearch(text, dateFrom, dateTo, sortFilter){
   let input;
   console.log('in actions', sortFilter);
   if(dateFrom !== null && dateTo !== null && sortFilter !== ''){
-    input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&sortBy=${sortFilter}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+    input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&sortBy=${sortFilter}&apiKey=81351c3adc5d41898a27d48efe9c38cd`;
   } else if (dateFrom != null && dateTo != null){
-    input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+    input = `https://newsapi.org/v2/everything?q=${text}&from=${dateFrom}&to=${dateTo}&apiKey=81351c3adc5d41898a27d48efe9c38cd`;
   } else {
-    input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+    input = `https://newsapi.org/v2/everything?q=${text}&apiKey=81351c3adc5d41898a27d48efe9c38cd`;
   }
   if(dateFrom == null && dateTo == null && sortFilter != null){
-    input = `https://newsapi.org/v2/everything?q=${text}&sortBy=${sortFilter}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+    input = `https://newsapi.org/v2/everything?q=${text}&sortBy=${sortFilter}&apiKey=81351c3adc5d41898a27d48efe9c38cd`;
   } else {
-    input = `https://newsapi.org/v2/everything?q=${text}&apiKey=7b14eb4195fc4f7199ee2c73e2edb2ce`;
+    input = `https://newsapi.org/v2/everything?q=${text}&apiKey=81351c3adc5d41898a27d48efe9c38cd`;
   }
 
   return function(dispatch) {

@@ -7,9 +7,9 @@ import './styles/SideNav.css';
 function SideNav(props){
   const { sourcesObject, currentSourceUrl } = props;
 
+  // <FormField sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl} />
   return(
     <div className='sideNavStyle'>
-      <FormField sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl} />
       <SourcesContainer sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl}/>
     </div>
   );

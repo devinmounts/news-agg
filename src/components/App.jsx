@@ -15,10 +15,11 @@ class App extends React.Component {
     super(props);
 
   }
-  // componentDidMount(){
-  //   this.props.dispatch(fetchSources());
-  //   this.props.dispatch(fetchTopHeadlines(this.props.currentSourceUrl));
-  // }
+
+  componentDidMount(){
+    this.props.dispatch(fetchSources());
+    this.props.dispatch(fetchTopHeadlines(this.props.currentSourceUrl));
+  }
 
   render(){
     const { sourcesObject, dispatch, currentSourceUrl, articlesObject } = this.props;
