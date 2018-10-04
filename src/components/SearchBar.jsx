@@ -3,6 +3,7 @@ import './styles/SearchBar.css';
 import search from './../assets/images/search.png';
 import { fetchArticlesByUserSearch } from './../actions';
 import SearchExpansion from './SearchExpansion';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 class SearchBar extends React.Component {
@@ -15,7 +16,7 @@ class SearchBar extends React.Component {
 
     this.state = {
       expansionVisible: false
-    }
+    };
     this.handleDateFrom = this.handleDateFrom.bind(this);
     this.handleDateTo = this.handleDateTo.bind(this);
     this.handleSortFilter = this.handleSortFilter.bind(this);
@@ -24,15 +25,15 @@ class SearchBar extends React.Component {
 
 
   handleDateFrom(selectedDateFrom){
-    this.dateFrom = selectedDateFrom
+    this.dateFrom = selectedDateFrom;
   }
 
   handleDateTo(selectedDateTo){
-    this.dateTo = selectedDateTo
+    this.dateTo = selectedDateTo;
   }
 
   handleSortFilter(selectedSortFilter){
-    this.sortFilter = selectedSortFilter
+    this.sortFilter = selectedSortFilter;
   }
 
   handleExpansionVisible(){
@@ -44,9 +45,9 @@ class SearchBar extends React.Component {
   render(){
     let expansionShow = null;
     if(this.state.expansionVisible){
-      expansionShow = <SearchExpansion onHandleDateFrom={this.handleDateFrom} onHandleDateTo={this.handleDateTo} onHandleSortFilter={this.handleSortFilter} />
+      expansionShow = <SearchExpansion onHandleDateFrom={this.handleDateFrom} onHandleDateTo={this.handleDateTo} onHandleSortFilter={this.handleSortFilter} />;
     }
-    const { dispatch } = this.props
+    const { dispatch } = this.props;
     return(
       <div className='searchDiv'>
         <h1 className='header'>Search global news.</h1>
@@ -59,14 +60,18 @@ class SearchBar extends React.Component {
         }}>
           <input onClick={this.handleExpansionVisible}className='input'
             ref={node => {this.text = node;}}
-            placeholder="e.g. Economic Analysis"
+            placeholder="e.g. Net neutrality"
           />
-        <button onClick={this.handleExpansionVisible} className='button' type='submit'><img className='icon'src={search}/></button>
+          <button onClick={this.handleExpansionVisible} className='button' type='submit'><img className='icon'src={search}/></button>
         </form>
         {expansionShow}
       </div>
     );
   }
+}
+
+SearchBar.propTypes = {
+  dispatch: PropTypes.func
 }
 
 

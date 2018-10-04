@@ -13,7 +13,6 @@ import './styles/App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    const { sourcesObject, dispatch, currentSourceUrl, match } = props;
 
   }
   // componentDidMount(){
@@ -22,15 +21,16 @@ class App extends React.Component {
   // }
 
   render(){
-    console.log(this.props);
+    const { sourcesObject, dispatch, currentSourceUrl, articlesObject } = this.props;
+
     return (
       <div>
-        <SideNav sourcesObject={this.props.sourcesObject} currentSourceUrl={this.props.currentSourceUrl} />
+        <SideNav sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl} />
         <TopNav />
         <Switch>
-          <Route exact path='/' render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
+          <Route exact path='/' render={() =><DisplayContainer articlesObject={articlesObject}/>} />
           <Route path='/test' component={DisplayContainer} />
-          <Route path={this.props.currentSourceUrl != null ? `/${this.props.currentSourceUrl}` : '/'} render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
+          <Route path={currentSourceUrl != null ? `/${currentSourceUrl}` : '/'} render={() =><DisplayContainer articlesObject={articlesObject}/>} />
         </Switch>
       </div>
     );
@@ -70,6 +70,7 @@ const mapStateToProps = state => {
 };
 
 App.propTypes = {
+  dispatch: PropTypes.func,
   sourcesObject: PropTypes.object,
   articlesObject: PropTypes.object,
   currentSourceUrl: PropTypes.string

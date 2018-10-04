@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { updateCurrentSourceUrl } from './../actions';
 import './styles/Article.css';
 import Moment from 'moment';
 
@@ -22,7 +21,7 @@ class Article extends React.Component {
   }
 
   render(){
-    const { title, author, date, source, description, url, image, dispatch } = this.props;
+    const { title, author, date, source, description, url, image} = this.props;
     let sourceDisplay = null;
     let titleDisplay = null;
     let imageDisplay = null;
@@ -39,9 +38,9 @@ class Article extends React.Component {
     let dateDisplay = new Moment(date).from(new Moment());
     let authorDisplay = null;
     if(author === null) {
-      authorDisplay = 'N/A'
+      authorDisplay = 'N/A';
     } else {
-      authorDisplay = author
+      authorDisplay = author;
     }
 
     return(

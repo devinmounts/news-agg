@@ -18,11 +18,17 @@
 .sort-filter {
   display: inline-block;
   vertical-align: top;
-  padding-left: 5px;
+  margin-left: 10px;
+}
+
+.from-date {
+  border-radius: 3px;
+  margin-bottom: 5px;
 }
 
 .to-date {
   margin-left: 22px;
+  border-radius: 3px;
 }
 
 .buttonStyle {
