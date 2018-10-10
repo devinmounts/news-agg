@@ -26,7 +26,6 @@ class App extends React.Component {
 
     return (
       <div>
-        <SideNav sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl} />
         <TopNav />
         <Switch>
           <Route exact path='/' render={() =><DisplayContainer articlesObject={articlesObject}/>} />
