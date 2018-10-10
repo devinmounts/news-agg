@@ -43,9 +43,9 @@ class App extends React.Component {
 
     return (
       <div>
-        <TopNav ref={(section) => {this.TopNav = section;}} onScrollToSources={this.handleScrollToSources} onScrollToDisplay={this.handleScrollToDisplay}/>
-        <DisplayContainer ref={(section) => {this.DisplayContainer = section;}} articlesObject={articlesObject}/>
-        <SideNav ref={(section) => {this.Sources = section;}} sourcesObject={sourcesObject}/>
+        <TopNav ref={(section) => {this.TopNav = section; }} onScrollToSources={this.handleScrollToSources} onScrollToDisplay={this.handleScrollToDisplay}/>
+        <DisplayContainer ref={(section) => {this.DisplayContainer = section; }} articlesObject={articlesObject}/>
+        <SideNav ref={(section) => {this.Sources = section; }} sourcesObject={sourcesObject}/>
       </div>
     );
   }
