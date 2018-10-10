@@ -50,7 +50,10 @@ class SearchBar extends React.Component {
     const { dispatch } = this.props;
     return(
       <div className='searchDiv'>
-        <h1 className='header'>Search global news.</h1>
+        <div className='header-div'>
+          <h1 className='header-text'>Above the fold.</h1>
+          <h2 className='header-text'>your source for global news</h2>
+        </div>
         <form onSubmit={e => {
           e.preventDefault();
           if (!this.text.value.trim()) {
