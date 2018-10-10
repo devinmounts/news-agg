@@ -14,6 +14,9 @@ import './styles/App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.handleScrollToSources = this.handleScrollToSources.bind(this)
+    this.handleScrollToDisplay = this.handleScrollToDisplay.bind(this)
+
 
   }
 
@@ -22,15 +25,27 @@ class App extends React.Component {
     this.props.dispatch(fetchTopHeadlines(this.props.currentSourceUrl));
   }
 
+  handleScrollToSources() {
+    console.log('app');
+    scrollToComponent(this.DisplayContainer, {align: 'top'});
+  }
+
+  handleScrollToDisplay() {
+    console.log('onScrollToDisplay');
+    scrollToComponent(this.Sources, {align: 'middle'});
+  }
+
+
+
 
   render(){
     const { sourcesObject, dispatch, currentSourceUrl, articlesObject } = this.props;
 
     return (
       <div>
-        <TopNav />
-        <DisplayContainer articlesObject={articlesObject}/>
-        <SideNav sourcesObject={sourcesObject}/>
+        <TopNav ref={(section) => {this.TopNav = section;}} onScrollToSources={this.handleScrollToSources} onScrollToDisplay={this.handleScrollToDisplay}/>
+        <DisplayContainer ref={(section) => {this.DisplayContainer = section;}} articlesObject={articlesObject}/>
+        <SideNav ref={(section) => {this.Sources = section;}} sourcesObject={sourcesObject}/>
       </div>
     );
   }
@@ -72,7 +87,9 @@ App.propTypes = {
   dispatch: PropTypes.func,
   sourcesObject: PropTypes.object,
   articlesObject: PropTypes.object,
-  currentSourceUrl: PropTypes.string
+  currentSourceUrl: PropTypes.string,
+  onScrollToSources: PropTypes.func,
+  onScrollToDisplay: PropTypes.func
 };
 
 export default connect(mapStateToProps)(App);
