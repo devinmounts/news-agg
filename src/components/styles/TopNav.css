@@ -80,7 +80,7 @@
 
 .login {
   float: right;
-  font-size: 18px;
+  font-size: 24px;
   color: grey;
   padding: 5px;
 }
@@ -88,7 +88,12 @@
 .login:hover {
   float: right;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
   color: #eb803c;
   padding: 5px;
+}
+
+.map-icon {
+  margin: 5px 5px;
+  width: 25%;
 }

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import { fetchSources, fetchTopHeadlines } from './../actions';
+import scrollToComponent from 'react-scroll-to-component';
 
 import './styles/App.css';
 
@@ -21,17 +22,15 @@ class App extends React.Component {
     this.props.dispatch(fetchTopHeadlines(this.props.currentSourceUrl));
   }
 
+
   render(){
     const { sourcesObject, dispatch, currentSourceUrl, articlesObject } = this.props;
 
     return (
       <div>
         <TopNav />
-        <Switch>
-          <Route exact path='/' render={() =><DisplayContainer articlesObject={articlesObject}/>} />
-          <Route path='/test' component={DisplayContainer} />
-          <Route path={currentSourceUrl != null ? `/${currentSourceUrl}` : '/'} render={() =><DisplayContainer articlesObject={articlesObject}/>} />
-        </Switch>
+        <DisplayContainer articlesObject={articlesObject}/>
+        <SideNav sourcesObject={sourcesObject}/>
       </div>
     );
   }

@@ -10,6 +10,7 @@ function SideNav(props){
   // <FormField sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl} />
   return(
     <div className='sideNavStyle'>
+      <h1>Top News Sources</h1>
       <SourcesContainer sourcesObject={sourcesObject} currentSourceUrl={currentSourceUrl}/>
     </div>
   );

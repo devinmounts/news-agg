@@ -5,6 +5,9 @@
   border: solid black 1px;
   border-radius: 5px;
   color: grey;
+  width: 30%;
+  display: inline-block;
+
 }
 .source:hover {
   background-color: #eb803c;
