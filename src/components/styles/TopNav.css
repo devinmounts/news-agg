@@ -1,10 +1,16 @@
 .topNavStyle {
   width: 100%;
   height: 100vh;
+  z-index: 1;
   border: solid black .5px;
-  float: right;
-  background-color: #153042;
+  background-color: #153042bd;
   position: relative;
+}
+
+.nav-image {
+  background-image: url('./../../assets/images/papers.jpg');
+  z-index: -1;
+  background-size: cover;
 }
 
 .flex-box {

@@ -22,13 +22,14 @@ class TopNav extends React.Component {
 
   render(){
     return(
-      <div className='topNavStyle'>
-        <SearchBar />
-        <Link className="login" to='/login'> Login</Link><Link className="login" to='/login'>Join </Link>
-        <div className='flex-box' >
+      <div className='nav-image'>
+        <div className='topNavStyle'>
+          <SearchBar />
+          <Link className="login" to='/login'> Login</Link><Link className="login" to='/login'>Join </Link>
+          <div className='flex-box' >
+          </div>
         </div>
       </div>
-
     );
 
   }
