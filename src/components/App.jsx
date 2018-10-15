@@ -16,8 +16,6 @@ class App extends React.Component {
     super(props);
     this.handleScrollToSources = this.handleScrollToSources.bind(this)
     this.handleScrollToDisplay = this.handleScrollToDisplay.bind(this)
-
-
   }
 
   componentDidMount(){
@@ -32,22 +30,18 @@ class App extends React.Component {
 
   handleScrollToDisplay() {
     console.log('display');
-    scrollToComponent(this.DisplayContainer);
+    scrollToComponent(this.Display, {align: 'top'});
   }
-
-
 
 
   render(){
     const { sourcesObject, dispatch, currentSourceUrl, articlesObject } = this.props;
-
     return (
       <div>
         <TopNav ref={(section) => {this.TopNav = section; }} onScrollToSources={this.handleScrollToSources} onScrollToDisplay={this.handleScrollToDisplay}/>
-        <DisplayContainer ref={(section) => {this.DisplayContainer = section; }} articlesObject={articlesObject}/>
-        <DisplayContainer ref={(section) => {this.DisplayContainer = section; }} articlesObject={articlesObject}/>
-        <SideNav ref={(section) => {this.bottom = section; }} sourcesObject={sourcesObject}/>
-        <h1 ref={(section) => {this.Sources = section; }}>bottom</h1>
+        <DisplayContainer ref={(section) => { this.Display = section; }} articlesObject={articlesObject}/>
+        <SideNav ref={(section) => {this.Sources = section; }} sourcesObject={sourcesObject}/>
+        <h1 ref={(section) => {this.bottom = section}}>bottom</h1>
       </div>
     );
   }
