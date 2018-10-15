@@ -1,10 +1,11 @@
 .source {
-  background-color: #153042;
+  background-color: grey;
   margin: 3px;
   padding: 3px;
   border: solid black 1px;
   border-radius: 5px;
-  color: grey;
+  color: white;
+  font-size: 18px;
   width: 30%;
   display: inline-block;
 
