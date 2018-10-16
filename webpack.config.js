@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 
@@ -83,8 +84,6 @@ module.exports = {
       title: 'News Agg',
       filename: resolve(__dirname, "build", "index.html"),
     }),
-    new webpack.DefinePlugin({
-    API_KEY: JSON.stringify(myEnv.parsed.API_KEY),
-    }),
+    new Dotenv()
   ]
 };
