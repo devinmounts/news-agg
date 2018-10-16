@@ -35,6 +35,7 @@ class App extends React.Component {
 
 
   render(){
+    console.log(process.env.API_KEY);
     const { sourcesObject, dispatch, currentSourceUrl, articlesObject } = this.props;
     return (
       <div>
