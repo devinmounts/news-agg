@@ -51,6 +51,8 @@
 ## Links
 
 * Repo: https://github.com/devinmounts/news-agg
+* Deployed Site:
+https://rocky-waters-37809.herokuapp.com/#/
 
 ## License
 
