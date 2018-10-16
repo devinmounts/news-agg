@@ -83,5 +83,8 @@ module.exports = {
       title: 'News Agg',
       filename: resolve(__dirname, "build", "index.html"),
     }),
+    new webpack.DefinePlugin({
+    API_KEY: JSON.stringify(myEnv.parsed.API_KEY),
+    }),
   ]
 };
