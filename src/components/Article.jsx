@@ -29,11 +29,11 @@ class Article extends React.Component {
     if(this.state.readMoreVisible){
       sourceDisplay = <h5 className='read-source'>READ MORE</h5>;
       titleDisplay = <h1 className='read-title'>{title}</h1>;
-      imageDisplay = <a href={url}><Image className='read-image' onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
+      imageDisplay = <a href={url}><img className='read-image' onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
     } else {
       sourceDisplay = <h5 className='article-source'>Source: {source}</h5>;
       titleDisplay = <a href={url}><h1>{title}</h1></a>;
-      imageDisplay = <a href={url}><Image onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
+      imageDisplay = <a href={url}><img onMouseEnter={this.handleReadMoreVisible} onMouseLeave={this.handleReadMoreVisible} className='image' src={image} /></a>;
     }
 
     let dateDisplay = new Moment(date).from(new Moment());

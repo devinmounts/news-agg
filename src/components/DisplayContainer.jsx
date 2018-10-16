@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Article from './Article';
 import './styles/DisplayContainer.css';
+import HorizontalScroll from 'react-scroll-horizontal';
 
 class DisplayContainer extends React.Component {
   constructor(props){
@@ -12,7 +13,7 @@ class DisplayContainer extends React.Component {
   render(){
     const { articlesObject } = this.props
 
-    let articles = null;
+    let articles = [];
     if(articlesObject.articles != undefined && !articlesObject.articles.length < 1 ){
       articles = Object.keys(this.props.articlesObject.articles).map((articleId) => {
         let article = this.props.articlesObject.articles[articleId];
@@ -24,16 +25,17 @@ class DisplayContainer extends React.Component {
           description = {article.description}
           url = {article.url}
           image = {article.urlToImage}
-          key = {articleId} />;
+          key = {articleId}
+          className='child'/>;
       });
     } else {
-      articles = <h1>No articles matched your search</h1>;
     }
-
-
+    console.log(articles);
     return (
       <div className='display-container'>
-        {articles !=null ? articles : ''}
+        <HorizontalScroll>
+          {articles}
+        </HorizontalScroll>
       </div>
     );
   }

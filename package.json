@@ -20,6 +20,7 @@
     "react-graceful-image": "^1.2.9",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.3.1",
+    "react-scroll-horizontal": "^1.5.1",
     "react-scroll-to-component": "^1.0.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
