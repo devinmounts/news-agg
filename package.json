@@ -1,13 +1,17 @@
 {
-  "name": "react-karaoke",
+  "name": "news-aggregator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.7.0"
+  },
   "scripts": {
     "test": "jest --watchAll",
-    "start": "webpack-dev-server",
     "lint": "eslint src/** src/**/**; exit 0",
-    "lint-fix": "eslint src/** src/**/** --fix; exit 0"
+    "lint-fix": "eslint src/** src/**/** --fix; exit 0",
+    "prod": "NODE_ENV=production node server.js",
+    "prodbuild": "webpack --config webpack.production.config.js"
   },
   "author": "Tyler Suderman",
   "license": "ISC",
