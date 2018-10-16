@@ -1,8 +1,15 @@
 .display-container {
-  width: 100%;
+  width: 90%;
   height: 40em;
+  margin: 0 5%;
+  background-color: white;
 }
 
-/* .child {
+.child{
+  height: 100%;
   width: 90%;
-} */
+}
+
+.container-backing {
+  background-color: #38474f;
+}

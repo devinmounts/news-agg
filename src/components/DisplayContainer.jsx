@@ -25,17 +25,19 @@ class DisplayContainer extends React.Component {
           description = {article.description}
           url = {article.url}
           image = {article.urlToImage}
-          key = {articleId}
-          className='child'/>;
+          key = {articleId}/>;
       });
     } else {
     }
     console.log(articles);
     return (
-      <div className='display-container'>
-        <HorizontalScroll>
-          {articles}
-        </HorizontalScroll>
+      <div className='container-backing'>
+        <div className='display-container'>
+          <HorizontalScroll
+            className='child'>
+              {articles}
+          </HorizontalScroll>
+        </div>
       </div>
     );
   }
