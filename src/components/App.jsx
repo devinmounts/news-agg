@@ -24,13 +24,36 @@ class App extends React.Component {
   }
 
   handleScrollToSources() {
-    console.log('app');
     scrollToComponent(this.bottom, {align: 'top'});
   }
 
   handleScrollToDisplay() {
-    console.log('display');
     scrollToComponent(this.Display, {align: 'top'});
+  }
+
+  handleScrollToComponent(component){
+    let newSelectedComponent;
+    switch (component) {
+      case 'this.Bio':
+        newSelectedComponent = this.Bio
+        this.setState({
+          selectedComponent: newSelectedComponent
+        });
+        break;
+      case 'this.Portfolio':
+      newSelectedComponent = this.Portfolio
+      this.setState({
+        selectedComponent: newSelectedComponent
+      });
+      break;
+      case 'this.Contact':
+      newSelectedComponent = this.Contact
+      this.setState({
+        selectedComponent: newSelectedComponent
+      });
+      break;
+      default:
+    }
   }
 
 
