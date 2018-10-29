@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
 import mapIcon from './../assets/images/map-icon.png';
 import PropTypes from 'prop-types';
+import * as routes from './../constants/routes';
 
 class TopNav extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class TopNav extends React.Component {
         <div className='topNavStyle'>
           <img className='map-icon' src={mapIcon}/>
           <SearchBar />
-          <Link className="login" to='/login'> Login</Link><Link className="login" to='/login'>Join </Link>
+          <Link className="login" to={routes.SIGN_IN}> Login</Link><Link className="login" to={routes.SIGN_UP}>Join </Link>
           <div className='flex-box' >
             <span onClick={(e) => this.activateTab(e.target.attributes[0].value), this.handleScrollToDisplay} value='top-headlines' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category-one'}>Your Headlines</span>
             <span onClick={(e) => this.activateTab(e.target.attributes[0].value), this.handleScrollToSources} value='everything' className={this.state.activeTab === 'everything' ? 'activeTab' : 'category-two'}>Sources</span>

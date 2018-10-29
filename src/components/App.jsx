@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import { fetchSources, fetchTopHeadlines } from './../actions';
 import scrollToComponent from 'react-scroll-to-component';
-
+import * as routes from './../constants/routes';
 import './styles/App.css';
 
 
@@ -66,6 +66,12 @@ class App extends React.Component {
         <DisplayContainer ref={(section) => { this.Display = section; }} articlesObject={articlesObject}/>
         <SideNav ref={(section) => {this.Sources = section; }} sourcesObject={sourcesObject}/>
         <h1 ref={(section) => {this.bottom = section}}></h1>
+        <Switch>
+          <Route exact path={routes.LANDING} render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
+          <Route exact path={routes.SIGN_IN} component={SignInPage} />
+          <Route exact path={routes.SIGN_UP} component={SignUpPage} />
+          <Route path={this.props.currentSourceUrl != null ? `/${this.props.currentSourceUrl}` : '/'} render={() =><DisplayContainer articlesObject={this.props.articlesObject}/>} />
+        </Switch>
       </div>
     );
   }
