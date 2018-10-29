@@ -1,10 +1,12 @@
 .article-container {
-  width: 100%;
-  border-radius: 5px;
+  width: 500px;
+  border-radius: 3px;
   background-color: white;
   padding: 10px;
-  margin-bottom: 20px;
-  margin-right: 30px;
+  margin: 20px 30px;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
 }
 
 .image {
@@ -46,4 +48,13 @@
 
 .read-image {
   transform: scale(1.10);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

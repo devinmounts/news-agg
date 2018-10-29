@@ -1,15 +1,11 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-require('dotenv').config();
 
 module.exports = {
 
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    resolve(__dirname, "src", "index.jsx")
+    './src/index.jsx'
   ],
 
   output: {
@@ -22,42 +18,24 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
 
-  devtool: '#source-map',
-
-  devServer: {
-    hot: true,
-    contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
-  },
-
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        enforce: "pre",
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-        options: {
-          emitWarning: true,
-          configFile: "./.eslintrc"
-          }
-        },
-        {
-          test: /\.css$/,
-          use: [ 'style-loader', 'css-loader' ]
-        },
-        {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/i,
         use: [
-            {
-              loader: 'url-loader',
-              options: {
-                limit: 8192
-              }
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
             }
-          ]
-        },
-        {
+          }
+        ]
+      },
+      {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
@@ -76,8 +54,13 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',

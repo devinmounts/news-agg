@@ -1,0 +1,46 @@
+.search-expansion {
+  background: #0000008c;
+  width: 60%;
+  margin-left: 14%;
+  padding: 10px;
+  border: 2px solid black;
+  text-align: left;
+  }
+.date-div {
+  display: inline-block;
+}
+
+.filter-title{
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+.sort-filter {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.from-date {
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.to-date {
+  margin-left: 22px;
+  border-radius: 3px;
+}
+
+.buttonStyle {
+    background: #601ac7;
+    padding: 10px 17px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: white;
+    border: 1px solid #3f1084;
+    font-weight: 700;
+}
+.buttonStyle:hover{
+  background: #3e0e84;
+  color:white;
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import './styles/TopNav.css';
 import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
+import mapIcon from './../assets/images/map-icon.png';
+import PropTypes from 'prop-types';
 import * as routes from './../constants/routes';
 
 class TopNav extends React.Component {
@@ -11,6 +13,8 @@ class TopNav extends React.Component {
       activeTab: ''
     };
     this.activateTab = this.activateTab.bind(this);
+    this.handleScrollToSources = this.handleScrollToSources.bind(this);
+    this.handleScrollToDisplay = this.handleScrollToDisplay.bind(this);
   }
 
   activateTab(value){
@@ -19,19 +23,34 @@ class TopNav extends React.Component {
     });
   }
 
+  handleScrollToSources(){
+    console.log('here');
+    this.props.onScrollToSources();
+  }
+
+  handleScrollToDisplay(){
+    this.props.onScrollToDisplay();
+  }
+
   render(){
     return(
-      <div className='topNavStyle'>
-        <SearchBar />
-        <Link className="login" to={routes.SIGN_IN}> Login</Link><Link className="login" to={routes.SIGN_UP}>Join </Link>
-        <div className='flex-box' >
-          <span onClick={(e) => this.activateTab(e.target.attributes[0].value)} value='top-headlines' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category-one'}>Top Headlines</span>
-          <span onClick={(e) => this.activateTab(e.target.attributes[0].value)} value='everything' className={this.state.activeTab === 'everything' ? 'activeTab' : 'category-two'}>All Articles</span>
+      <div className='nav-image'>
+        <div className='topNavStyle'>
+          <img className='map-icon' src={mapIcon}/>
+          <SearchBar />
+          <Link className="login" to={routes.SIGN_IN}> Login</Link><Link className="login" to={routes.SIGN_UP}>Join </Link>
+          <div className='flex-box' >
+            <span onClick={(e) => this.activateTab(e.target.attributes[0].value), this.handleScrollToDisplay} value='top-headlines' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category-one'}>Your Headlines</span>
+            <span onClick={(e) => this.activateTab(e.target.attributes[0].value), this.handleScrollToSources} value='everything' className={this.state.activeTab === 'everything' ? 'activeTab' : 'category-two'}>Sources</span>
+          </div>
         </div>
       </div>
-
     );
-
   }
+}
+
+TopNav.propTypes = {
+  onScrollToSources: PropTypes.func,
+  onScrollToDisplay: PropTypes.func
 }
 export default TopNav;

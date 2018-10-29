@@ -1,13 +1,23 @@
 .searchDiv {
   position: absolute;
-  top: 10%;
+  top: 30%;
   width: 100%;
+  margin: 0 auto;
+  text-align: center;
   color: white;
 }
 
-.header {
-  margin: 2px;
+.header-div{
+  margin: 0 auto;
+  width: 76%;
   padding-left: 5px;
+  text-align: center;
+}
+
+.header-text {
+  width: 63%;
+  text-align: left;
+  margin: 0
 }
 
 .input {
@@ -19,21 +29,28 @@
   font-weight: 700;
   font-size: 20px;
   padding: 5px;
-  margin-top: 5px
+  top: 0%;
 }
 
 .icon {
-  width: 65px;
+  width: 50px;
   vertical-align: bottom;
   color: white;
   cursor: pointer;
 }
 
-.icon:hover {
-}
 
 .button {
-  height: 38px;
-  background-color: #153042;
+  margin-left: 10px;
+  background-color: #153042bd;
   border: none;
+  vertical-align: bottom;
+}
+
+.icon:hover {
+  width: 50px;
+  vertical-align: bottom;
+  color: grey;
+  cursor: pointer;
+  transform: scaleX(1.15);
 }

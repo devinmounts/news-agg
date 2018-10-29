@@ -1,13 +1,10 @@
 # News Aggregator
 
-#### Epicodus Capstone, 09/21/2018
+#### Epicodus Capstone, 10/04/2018
 
 #### By Devin Mounts
 
 ## A web application that displays news articles based on user queries. Users can query News API by various parameters to return articles with image, title, description and a link to content.  
-
-## Component Structure
-![Component Structure](./src/public/component-tree.png)
 
 ## Specs
 
@@ -49,15 +46,13 @@
 * ESLint
 * Jest
 * News API
+* Moment
 
 ## Links
 
-* Repo: https://github.com/devinmounts/meeting-manager
-
-## Notes
-
-* Displaying dynamic data.
-* Best practice for locating logic.
+* Repo: https://github.com/devinmounts/news-agg
+* Deployed Site:
+https://rocky-waters-37809.herokuapp.com/#/
 
 ## License
 

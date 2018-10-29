@@ -1,10 +1,16 @@
 .topNavStyle {
-  width: 76%;
-  height: 200px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
   border: solid black .5px;
-  float: right;
-  background-color: #153042;
+  background-color: #153042d4;
   position: relative;
+}
+
+.nav-image {
+  background-image: url('./../../assets/images/papers.jpg');
+  z-index: -1;
+  background-size: cover;
 }
 
 .flex-box {
@@ -74,7 +80,7 @@
 
 .login {
   float: right;
-  font-size: 18px;
+  font-size: 24px;
   color: grey;
   padding: 5px;
 }
@@ -82,7 +88,12 @@
 .login:hover {
   float: right;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
   color: #eb803c;
   padding: 5px;
+}
+
+.map-icon {
+  margin: 5px 5px;
+  width: 25%;
 }

@@ -1,7 +1,18 @@
 .display-container {
-  width: 72%;
-  float: right;
-  padding-right: 40px;
-  height: 100%;
+  width: 90%;
+  height: 40em;
+  margin: 0 5%;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+}
 
+.child{
+  height: 100%;
+  width: 90%;
+}
+
+.container-backing {
+  background-color: #808080;
 }
