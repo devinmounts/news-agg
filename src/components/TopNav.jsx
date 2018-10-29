@@ -38,7 +38,10 @@ class TopNav extends React.Component {
         <div className='topNavStyle'>
           <img className='map-icon' src={mapIcon}/>
           <SearchBar />
-          <Link className="login" to={routes.SIGN_IN}> Login</Link><Link className="login" to={routes.SIGN_UP}>Join </Link>
+          <Link className="login" to={routes.SIGN_IN}> Login</Link>
+          <Link className="login" to={routes.LANDING}>Landing</Link>
+          <Link className='login' to={routes.HOME}>Home</Link>
+          <Link className='login' to={routes.ACCOUNT}>Account</Link>
           <div className='flex-box' >
             <span onClick={(e) => this.activateTab(e.target.attributes[0].value), this.handleScrollToDisplay} value='top-headlines' className={this.state.activeTab === 'top-headlines' ? 'activeTab' : 'category-one'}>Your Headlines</span>
             <span onClick={(e) => this.activateTab(e.target.attributes[0].value), this.handleScrollToSources} value='everything' className={this.state.activeTab === 'everything' ? 'activeTab' : 'category-two'}>Sources</span>
