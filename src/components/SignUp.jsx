@@ -25,7 +25,7 @@ class SignUpForm extends Component {
 	constructor(props) {
 		super(props);
 		
-		this.state = { ...INITIAL_STATE}
+    this.state = { ...INITIAL_STATE };
 	}
 	 onSubmit = (event) => {
 
@@ -40,7 +40,12 @@ class SignUpForm extends Component {
 			error,
 		} = this.state
 
-		
+		const isInvalid = 
+			passwordOne !== paswordTwo ||
+			passwordOne === '' ||
+			email === '' ||
+			username === '';
+
 		return (
 			<form onSubmit={this.onSubmit}>
 				<input 
@@ -67,7 +72,7 @@ class SignUpForm extends Component {
 				placeholder="Confirm Password"
 				type="password"
 				/>
-				<button type='submit'>
+				<button disabled={isInvalid} type='submit'>
 					Sign Up
 				</button>
 

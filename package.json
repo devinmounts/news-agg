@@ -34,6 +34,7 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
+    "@babel/preset-es2016": "^7.0.0-beta.53",
     "babel-core": "^6.24.1",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
