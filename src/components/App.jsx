@@ -13,7 +13,6 @@ import SignUpPage from './SignUp';
 import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import AccountPage from './Account';
-import HomePage from './Home';
 
 
 
