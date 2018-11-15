@@ -9,21 +9,72 @@ const SignUpPage = () =>
 		<SignUpForm/>
 	</div>
 
+const INITIAL_STATE = {
+	username: '',
+	email: '',
+	passwordOne: '',
+	passwordTwo: '',
+	error: null,
+};
+
+const byPropKey = (propertyName, value) => () => ({
+	[propertyName]: value,
+});
+
 class SignUpForm extends Component {
 	constructor(props) {
 		super(props);
+		
+		this.state = { ...INITIAL_STATE}
 	}
 	 onSubmit = (event) => {
 
 	 }
 
 	 render() {
-		 return (
-			 <form onSubmit={this.onSubmit}>
-			 
-			 </form>
-		 );
-	 }
+		const {
+			username,
+			email,
+			passwordOne,
+			passwordTwo,
+			error,
+		} = this.state
+
+		
+		return (
+			<form onSubmit={this.onSubmit}>
+				<input 
+				value={username}
+				onChange={event => this.setState(byPropKey('username', event.target.value))}
+				placeholder='Full Name'
+				type="text"
+				/>
+				<input 
+				value={email}
+				onChange={event => this.setState(byPropKey('email', event.target.value))}
+				placeholder="Email"
+				type="text"
+				/>
+				<input 
+				value={passwordOne}
+				onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+				placeholder="Password"
+				type="password"
+				/>
+				<input 
+				value={passwordTwo}
+				onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+				placeholder="Confirm Password"
+				type="password"
+				/>
+				<button type='submit'>
+					Sign Up
+				</button>
+
+				{error && <p>{error.message}</p>}
+			</form>
+		);
+	}
 }
 
 const SignUpLink = () =>
